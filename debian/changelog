@@ -1,3 +1,17 @@
+get-iplayer (3.30-1+deb10u1) buster; urgency=medium
+
+  * New upstream release.
+  * 262616c8a2ec: Release 3.30 [notnac]
+  * 2d4d95aab2d8: iterate total file size in FHD download progress display [notnac]
+  * c9d2f17ffbd7: ensure video present in 1080p HLS streams [notnac]
+  * 85656e5c108e: updated help text [notnac]
+  * 6618efc51106: corrected help text [notnac]
+  * 78c63cc54c1b: Fix downloadabortonfail option [David Llewellyn-Jones]
+  * 05eb7ddc19f6: Update auto-close-lock-pr-action.yml [notnac]
+  * 67d5d7ac2fee: Update README.md [notnac]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Sun, 29 May 2022 09:05:07 +0100
+
 get-iplayer (3.29-1+deb10u1) buster; urgency=medium
 
   * New upstream release.
