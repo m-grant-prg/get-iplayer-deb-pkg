@@ -1,0 +1,41 @@
+Source: get-iplayer
+Section: video
+Priority: optional
+Maintainer: Mark Grant <m.grant.prg@gmail.com>
+Build-Depends: debhelper (>= 12~), quilt
+Standards-Version: 4.3.0
+Homepage: https://github.com/get-iplayer/get_iplayer
+
+Package: get-iplayer
+Architecture: all
+Depends: libwww-perl, ${perl:Depends}, ${misc:Depends},
+         libxml-simple-perl, libxml-libxml-perl, libmojolicious-perl,
+         libcgi-pm-perl,
+         atomicparsley (>= 0.9.4),
+         ffmpeg,
+	 mgrant-obs-deb-keyring
+Recommends:
+Suggests:
+Description: get_iplayer: BBC iPlayer Indexing Tool and PVR
+ .
+ Features
+ + Downloads TV and radio programmes from BBC iPlayer
+ + Allows multiple programmes to be downloaded using a single command
+ + Indexing of most available iPlayer catch-up programmes (not BBC Three,
+   Red Button or iPlayer Exclusive)
+ + Caching of index with automatic updating (default 4h)
+ + Regex search on programme name
+ + Regex search on programme description and episode title
+ + Filter search results by channel
+ + Direct download via programme ID or URL
+ + PVR capability (may be used with cron or Task Scheduler)
+ + HTTP proxy support
+ + Requires ffmpeg for conversion to MP4 and AtomicParsley for metadata tagging
+ .
+ IMPORTANT
+ Please refer to the release notes at
+ https://github.com/get-iplayer/get_iplayer/wiki/releasenotes
+ .
+ DOCUMENTATION AND SUPPORT
+ Documentation: https://github.com/get-iplayer/get_iplayer/wiki
+ Support: https://squarepenguin.co.uk/forums/
