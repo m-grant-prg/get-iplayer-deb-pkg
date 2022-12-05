@@ -1,0 +1,1549 @@
+get-iplayer (3.29-1ubuntu20.04u1) focal; urgency=medium
+
+  * Update Copyright for 2022 for debian/* files.
+  * New upstream release.
+  * a17ee8173ea1: Release 3.29 [notnac]
+  * 9b6b46a90f60: remove --purge-files and ignore --trim-history, --no-purge [notnac]
+  * a33cf8f5d6ba: remove multi-version fields from metadata files [notnac]
+  * 43ddebce1922: added warnings for command-line modes, fps25 options [notnac]
+  * e89c643cf766: added "fhd" (1080p) streams [notnac]
+  * ee25e1ad0f9a: changed recording quality options [notnac]
+  * f6657e4f954c: save geoblock/unavailable check results per-version [notnac]
+  * eeaadca9d4f6: allow HLS for --audio-only [notnac]
+  * 89975ba1edcb: fixed handling of "hls" mode prefix [notnac]
+  * a5984d237d72: Restore BBC Three to available channels [notnac]
+  * 89b7fcaaafcf: replace cache field separators (vertical bar) in text fields [notnac]
+  * 2b2175da9182: adjust classification of xsd streams due to BBC changes [notnac]
+  * 0d29f873e2a4: add issue template to makefile [notnac]
+  * ed24f450fb8d: check contents of mpd fetch [notnac]
+  * 744790565b03: Create auto-close-lock-pr-action.yml [notnac]
+  * e429a1ac0648: Create PULL_REQUEST_TEMPLATE.md [notnac]
+  * 686719d24172: Update bug_report.yaml [dinkypumpkin]
+  * d037055745d9: Update bug_report.yaml [dinkypumpkin]
+  * c4c717af3559: Update bug_report.yaml [dinkypumpkin]
+  * 3dfa43be3cd5: Update bug_report.yaml [dinkypumpkin]
+  * ef44fec51bed: Delete bug_report.md [dinkypumpkin]
+  * 16e95909a3ac: Create bug_report.yaml [dinkypumpkin]
+  * f0994395c8bf: Revert "Update bug_report.md" [notnac]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Tue, 08 Feb 2022 10:02:26 +0000
+
+get-iplayer (3.28-0ubuntu20.04u2) focal; urgency=medium
+
+  * New upstream release.
+  * aee37c9006dd: Release 3.28 [notnac]
+  * d746489666d4: Fixed --pid-recursive scraping for CBeebies/CBBC programmes [notnac]
+  * f4197949e89e: abbreviate mode lists in metadata files and --info output [notnac]
+  * b48d3960c6cf: keep max audio bitrate if multiple for single video resolution [notnac]
+  * e2266ab15ad0: exclude "vbidi" supplier by default [notnac]
+  * 76ba39c04fe0: don't show 403 errors for master playlist without --verbose [notnac]
+  * 96d5f5bdfb54: force text wrapping of long strings in web pvr info page [notnac]
+  * c729b0f29625: added cloudfront CDN option [notnac]
+  * e4b5b1dcbfa4: Update bug_report.md [notnac]
+  * 56b2ffaa1ae6: Update bug_report.md [notnac]
+  * abd6c847fe54: fixed version numbering [notnac]
+  * a0f3c2a9070f: Revert "bump version" [notnac]
+  * eabac817da8c: bump version [notnac]
+  * Fix watch file.
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Thu, 09 Dec 2021 14:17:32 +0000
+
+get-iplayer (3.27-0ubuntu20.04u2) focal; urgency=medium
+
+  * New version numbering to allow local version differences in releases.
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Sat, 20 Feb 2021 15:49:28 +0000
+
+get-iplayer (3.27-0ubuntu1) focal; urgency=medium
+
+  * New upstream release.
+  * eabac817da8c: bump version [notnac]
+  * b8970ba10497: Release 3.27 [notnac]
+  * fd38bc792825: Updated Makefile [notnac]
+  * d6c2e92c3e54: Use Mojo::Promise if available [notnac]
+  * 2222b30ca874: Fix up dev version numbers [notnac]
+  * ec0d5663e05e: Detect existing MPEG-TS file earlier for DASH downloads [notnac]
+  * 08a0db2b4e20: Web PVR: revamped streaming formats [notnac]
+  * 1c4594fe44d0: Web PVR: open new window/tab for each programme page and help page [notnac]
+  * 3d71db594493: Web PVR: No checkbox or play links for deleted files [notnac]
+  * 5e8a69a0c6b7: Web PVR: Fixed calculation of last page number [notnac]
+  * dcfca17b59eb: Web PVR: removed detritus left over from localfiles and proxied streaming [notnac]
+  * 7f6496c84fd9: Web PVR: fixed bug that caused custom streaming frame rate to be ignored [notnac]
+  * 268b7deb7fec: Web PVR: updated streaming video size options [notnac]
+  * 14a4c7331d61: Web PVR: constrain size of thumbnail in info page [notnac]
+  * 824bb3d52bdb: always optimise for streaming with remux [notnac]
+  * 32e7a2365ae2: History search now returns most recent entry for PID with extant media file [notnac]
+  * 32f21132271e: Merge branch 'master' into develop [notnac]
+  * 3c2ca584637b: Update auto-close-lock-issue-action.yml [dinkypumpkin]
+  * 34f400ac391b: Update bug_report.md [dinkypumpkin]
+  * ac175cbd783a: mention Sounds in man page [dinkypumpkin]
+  * ba3134200cb9: README edits [dinkypumpkin]
+  * e9fa79b2a040: update channel name extraction with --pid-recursive [dinkypumpkin]
+  * 766b0657e72a: removed --tag-utf8 option [dinkypumpkin]
+  * d8ea1414af92: Merge branch 'master' into contribute [dinkypumpkin]
+  * 7fe8a8256cd8: Delete auto-close-lock-pr-action.yml [dinkypumpkin]
+  * 1617911ccfb7: Create bug_report.md [dinkypumpkin]
+  * 91a8169f7abb: Create config.yml [dinkypumpkin]
+  * 83309b17e0f0: Create auto-close-lock-pr-action.yml [dinkypumpkin]
+  * eb95fd7d4d79: Create auto-close-lock-issue-action.yml [dinkypumpkin]
+  * e4b2413eba1e: bump dev version [dinkypumpkin]
+  * Update Debian files Copyright date.
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Mon, 15 Feb 2021 13:57:28 +0000
+
+get-iplayer (3.26-1ubuntu1) focal; urgency=medium
+
+  * Upgrade to compatibility level 12.
+  * Package reviewed up to current standards version 4.3.0.
+  * Improve copyright format.
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Sun, 25 Oct 2020 09:37:44 +0100
+
+get-iplayer (3.26-deb10u1) buster; urgency=medium
+
+  * New upstream release.
+  * 8dd1994: Release 3.26 [dinkypumpkin]
+  * 9fae0f1: Merge branch 'contribute' into develop [dinkypumpkin]
+  * 9a25882: Fix initialisation of hash [Ian Praxil]
+  * 7200809: use constants for OS checks [dinkypumpkin]
+  * 08c6783: added run_cmd_win32 [dinkypumpkin]
+  * 0f652d5: removed staleness check on PVR lockfile [dinkypumpkin]
+  * 293931a: detect invalid PVR lockfile and exit with error
+    [dinkypumpkin]
+  * 0ec9781: edited README [dinkypumpkin]
+  * c1801ac: restored subtitle colours [dinkypumpkin]
+  * fb553cb: limit thumbnail size to 1280 with --thumbnail-square
+    [dinkypumpkin]
+  * 35763d0: changed default value of --thumbnail-size to 1920 (for
+    1920x1080 image) [dinkypumpkin]
+  * ad7bd3a: updated README [dinkypumpkin]
+  * 9ab72cc: Revert "Don't retrieve stream data for "store" version"
+    [dinkypumpkin]
+  * 9058e96: added --cuesheet-offset option [dinkypumpkin]
+  * 0348ff1: update channel name extraction with --pid-recursive
+    [dinkypumpkin]
+  * 57f7713: change column labels [dinkypumpkin]
+  * 7973a99: help text edit [dinkypumpkin]
+  * 2fa2ef9: restored programme credits download [dinkypumpkin]
+  * 329ee0f: bump dev version [dinkypumpkin]
+  * 79627a6: Release 3.25 [dinkypumpkin]
+  * 415e4e3: complete list of file paths to ignore when escaping user
+    commands [dinkypumpkin]
+  * a713955: segments.inc file no longer needed to locate segments.json
+    file [dinkypumpkin]
+  * 7423f3a: readme edits [dinkypumpkin]
+  * a57cb29: changed mode list warning [dinkypumpkin]
+  * cf8a33b: added --tag-podcast warning in help text [dinkypumpkin]
+  * 315a7fd: bump dev version [dinkypumpkin]
+  * 49b06e7: Release 3.24 [dinkypumpkin]
+  * 4422578: added --mpeg-ts option [dinkypumpkin]
+  * 46ed73f: removed obsolete hlshd mode [dinkypumpkin]
+  * 8aa2671: added some hyphenated option aliases [dinkypumpkin]
+  * 1d9c959: removed --hls-lq-audio option [dinkypumpkin]
+  * e087d40: Restored hvfxsd and hvflow recording modes [notnac]
+  * 7691a5f: bump dev version [dinkypumpkin]
+  * f42a299: Release 3.23 [dinkypumpkin]
+  * f790908: readme edits [dinkypumpkin]
+  * 4caedd8: allow extraneous programme versions even if invalid
+    [dinkypumpkin]
+  * 51de69f: track redirects for DASH manifests and HLS variant
+    playlists [dinkypumpkin]
+  * bfb4e46: don't look for 320k/96k audio HLS streams (tv and radio)
+    [dinkypumpkin]
+  * c335fbd: added --output-radio and --output-tv option aliases
+    [dinkypumpkin]
+  * 7443b2d: clean up trailing whitespace [dinkypumpkin]
+  * aa5fe78: Respect programme type when adding new items to memcache
+    [dinkypumpkin]
+  * 8589b75: Added CBeebies Radio [notnac]
+  * e425bce: Added label tags to Web UI [hintswen]
+  * 03293b1: Adjust for perl 5.16 [David Llewellyn-Jones]
+  * 4a33eb5: bump dev version [notnac]
+  * 50a6051: Release 3.22 [notnac]
+  * b8a20be: Fixed schedule page parsing for cache updates [notnac]
+  * 7bfbae2: interpolate unknown/unspecified versions into "default"
+    pseudo-version [dinkypumpkin]
+  * 22643ae: Apply --pid-recursive-type when only downloading auxiliary
+    resources [notnac]
+  * 73eaf8a: Tighten programme title extraction with --pid-recursive
+    [notnac]
+  * 92eaed2: bump dev version [notnac]
+  * 6181aae: Release 3.21 [notnac]
+  * 656edbc: Added --cuesheet and --cuesheet-only options [notnac]
+  * aadd93d: Added --pid-recursive-type option [notnac]
+  * 25a64de: Added check for new release [notnac]
+  * a56ab4c: Added support for JSON metadata [notnac]
+  * 40543ca: adapted for mediaselector changes [dinkypumpkin]
+  * a909d41: force --subs-mono with --subs-embed [dinkypumpkin]
+  * 9bc480a: don't allow --pid (or --url) in default options file
+    [dinkypumpkin]
+  * b35ca6d: Expanded 403 message [notnac]
+  * e5ebfd8: Added <sesortx> [notnac]
+  * 910320c: Added --{exclude,include}-cdn aliases for --
+    {exclude,include}-supplier [notnac]
+  * d034665: Improved merging of alternate programme versions into
+    version search list [notnac]
+  * ac8a31c: Allow merging streams into versions with no streams
+    [notnac]
+  * a9a797a: Tidied credits download [notnac]
+  * 0d3fd08: Prevent stdio PerlIO layers from being removed by open3 on
+    Windows [notnac]
+  * 663fe50: Add another hyphen to punctuation conversion [notnac]
+  * a238563: Don't retrieve stream data for "store" version [notnac]
+  * 65a58c2: Use programme type for podcast flag [notnac]
+  * 28fb7de: Always look for subtitles, just in case [notnac]
+  * d60cf4e: Check if programme is listed as unavailable [notnac]
+  * fe3dc8b: Look for channel name in additional locations [notnac]
+  * 030660b: Look for additional media streams if necessary [notnac]
+  * d0e4032: Web PVR: added crash warning to auto-refresh pages
+    [dinkypumpkin]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Sat, 04 Jul 2020 14:01:44 +0100
+
+get-iplayer (3.20-ppa33~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * a857b50: Release 3.20 [notnac]
+  * 36c8d73: Fixed loading of PVR search names on Windows [notnac]
+  * 58b4f51: Fixed undefined array reference error with --pid-recursive
+    and no available episodes [notnac]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Tue, 26 Feb 2019 00:23:04 +0000
+
+get-iplayer (3.19-ppa33~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 1c36d65: Release 3.19 [notnac]
+  * c367381: Merge branch 'contribute' [notnac]
+  * 1555ced: Do not refresh or use cache with --pid by default [notnac]
+  * b8e2bf0: Revert "Ensure stale cache is updated on first PVR search"
+    [notnac]
+  * 5f70434: Merge rather then replace programme versions with same name
+    and duration [notnac]
+  * 26080d9: Removed obsolete options [notnac]
+  * 4dd73c5: Replaced BBC Two Scotland with BBC Scotland in programme
+    indexing [notnac]
+  * 84cb7f3: Added support for new series navigation in programme
+    episode lists [notnac]
+  * 32dd0e8: Check for existing files with obsolete <episode> expansion
+    [notnac]
+  * 2ea7a82: Added <senumx> substitution parameter [notnac]
+  * f10e5c6: Prefer system directory separator [notnac]
+  * 8e8f619: Don't delete pvr entries in test mode [wiehe]
+  * 3fcaf23: Added --expires-after option [notnac]
+  * 2751f9f: help text edits [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Mon, 25 Feb 2019 00:22:30 +0000
+
+get-iplayer (3.18-ppa32~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 756ad12: Release 3.18 [notnac]
+  * 361bb01: don't look for local options file [dinkypumpkin]
+  * 2e205b0: Only show episode list with --pid-recursive and --test
+    [notnac]
+  * 5b1b385: help text edit [dinkypumpkin]
+  * 810f252: Only show search results for PVR runs with --test [notnac]
+  * aa40706: changed warning message re: options disallowed in default
+    options file [dinkypumpkin]
+  * 5ea62ef: Ensure stale cache is updated on first PVR search
+    [dinkypumpkin]
+  * e085c17: Updated man page and options dump [notnac]
+  * 503a2c3: ensure podcast version has lowest priority in default
+    version list [dinkypumpkin]
+  * 03e8b8b: Allow CRLF line endings when reading text files on all
+    platforms [notnac]
+  * a71bdff: ignore audiodescribed/signed for radio programmes
+    [dinkypumpkin]
+  * 4b2d362: Updated HLS stream data for old radio programmes [notnac]
+  * 23fd5d7: added substitution params <sebcast> <sebcastdate>
+    <sebcasttime> <sesort> [dinkypumpkin]
+  * ecf280a: require <episodenum> for <senum> [dinkypumpkin]
+  * f4273c8: pad leading episode number in <episode> to two digits
+    [dinkypumpkin]
+  * 1da2c53: support conditional separator suffix for substitution
+    parameters [dinkypumpkin]
+  * 830ff61: --subs-{embed,mono,raw,required) no longer imply --
+    subtitles [dinkypumpkin]
+  * 4e4963e: man page edits [notnac]
+  * 2cd582a: restore removed options (but ignore them) [dinkypumpkin]
+  * 94cf77c: added --available-before option [dinkypumpkin]
+  * 023cdeb: removed --no-dash-remux option [dinkypumpkin]
+  * de5bd0d: added --hls-lq-audio option [dinkypumpkin]
+  * 853883a: removed --hls-hq-audio option [dinkypumpkin]
+  * 3283efb: prevent unnecessary cache updates with --refresh-future
+    [dinkypumpkin]
+  * 1e5784a: Automatically look for http streams if https not found
+    [notnac]
+  * d2cd460: Try a bit harder to capture unique series name [notnac]
+  * f691c71: Updated warnings when no streams/modes found [notnac]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Fri, 28 Dec 2018 15:14:30 +0000
+
+get-iplayer (3.17-ppa32~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 57ac0a5: Release 3.17 [notnac]
+  * 3378da1: Replace ellipsis with space unless at beginning of value
+    [notnac]
+  * 357c686: work around different transaction errors in obsolete
+    mojolicious [dinkypumpkin]
+  * 539f895: capture separate audio bitrate for HLS radio streams in
+    verbose output [dinkypumpkin]
+  * 8bcb763: remove BBC Radio Scotland Highlands and Islands from cache
+    update [dinkypumpkin]
+  * 4ce4ca4: Disallow --force and --overwrite in default options file
+    [notnac]
+  * c737284: Prioritise versions with subtitles when --subtitles
+    specified [notnac]
+  * a7f6bfa: Restored HLS streams for radio archives [notnac]
+  * ffb0e35: Added additional <firstbcast> substitution parameters
+    [dinkypumpkin]
+  * 84cac84: Remove existing metadata tags before writing new ones
+    [notnac]
+  * 8ac4c89: Allow release tag in ffmpeg version string [notnac]
+  * ad68f78: make it obvious that error can be ignored for successful
+    download [dinkypumpkin]
+  * a58bd38: Restored use of --history with --tag-only, --metadata-only,
+    etc. [notnac]
+  * b1cd60c: help text edit [dinkypumpkin]
+  * 2e92029: suppress unnecessary download error messages [dinkypumpkin]
+  * bb055f0: fixed obsolete warning message [dinkypumpkin]
+  * 3069466: Apply --sortreverse with --pid-recursive [notnac]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Tue, 21 Aug 2018 19:35:01 +0000
+
+get-iplayer (3.16-ppa32~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 168a944: Release 3.16 [notnac]
+  * 79fdee4: Work around missing Mojo::Message::Response::is_success
+    method [notnac]
+  * 13ebc4d: help text edit [dinkypumpkin]
+  * 7b02cf5: bump dev version [dinkypumpkin]
+  * 3a91a41: Release 3.15 [dinkypumpkin]
+  * 77ad41a: display HTTP and connection errors without --verbose
+    [dinkypumpkin]
+  * cf0e912: help text edit [dinkypumpkin]
+  * 415cdea: more of the bleedin' obvious [dinkypumpkin]
+  * a0366f3: use same default output directory on macOS as on Windows
+    [dinkypumpkin]
+  * 2383b99: Restored --pid-recursive for non-CBBC/CBeebies TV and radio
+    programmes [dinkypumpkin]
+  * e7067a7: don't sanitise tracklist and credits filenames in user
+    commands [dinkypumpkin]
+  * 455c136: encode metadata file name [dinkypumpkin]
+  * b60cfcf: restored --pid-recursive for CBBC and CBeebies
+    [dinkypumpkin]
+  * 60a2e62: use smallest size (192) for cache thumbnails [dinkypumpkin]
+  * be40aee: Web PVR: make info page work in recordings tab [notnac]
+  * ace8cd8: bump dev version after building release [dinkypumpkin]
+  * bf42f48: added some hyphenated option names [dinkypumpkin]
+  * 58618d6: added --pid-recursive-list option [dinkypumpkin]
+  * ca2515b: allow "ll" abbreviation for limelight with --
+    {exclude,include}-supplier [dinkypumpkin]
+  * 5dc52c9: Use constant to define default thumbnail URL [notnac]
+  * 0d74c1c: Web PVR: Restored thumbnails to search output view [notnac]
+  * 470c35b: check earlier for empty schedule page [dinkypumpkin]
+  * 4d34156: remove unnecessary function arg [dinkypumpkin]
+  * 1c84844: edit non-uk warning text [dinkypumpkin]
+  * c3eb883: look for series number in JSON [dinkypumpkin]
+  * 77d5311: restored thumbnail URLs to cache [dinkypumpkin]
+  * 683a632: make refresh a bit less noisy with --verbose [dinkypumpkin]
+  * d4ca365: updated help text [dinkypumpkin]
+  * ac3ee39: added --list-format alias [dinkypumpkin]
+  * 5566e6c: simplify schedule page download a bit [dinkypumpkin]
+  * 32c5e46: added S4C series parsing with --pid-recursive
+    [dinkypumpkin]
+  * 5eb29b9: added explicit import of LWP::Protocol::https
+    [dinkypumpkin]
+  * 1de383c: show cache expiry with --verbose [dinkypumpkin]
+  * 61439ba: white space fixup [dinkypumpkin]
+  * 9191044: indicate future listings being indexed [dinkypumpkin]
+  * 7d77843: don't duplicate exit code 11 [dinkypumpkin]
+  * e8d7c9a: adapt for Mojolicious >= 7.80 SSL changes [dinkypumpkin]
+  * 4a5a4da: ensure full <lyrics> value duplicated to <longDescription>
+    [dinkypumpkin]
+  * 0c35fc5: populate <web> metadata field with episode programme info
+    page URL [dinkypumpkin]
+  * e4a422b: removed unused cache fields [dinkypumpkin]
+  * ec4c650: attempt to parse series/episode numbers for S4C programmes
+    [dinkypumpkin]
+  * f4ecb17: edit --no-sanitise help text [dinkypumpkin]
+  * 7c2bf77: edit --listformat help text [dinkypumpkin]
+  * 5c23982: make it even more bleedin' obvious [dinkypumpkin]
+  * 6fe685e: restore eval-wrapped locale check [dinkypumpkin]
+  * 95be4a0: if no programmes parsed from schedule page, always treat as
+    error [dinkypumpkin]
+  * 50cd885: fixed potential error with JSON schedule indexing
+    [dinkypumpkin]
+  * 71c4123: fixed parsing of programme name for episode list with --pid
+    [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Fri, 06 Jul 2018 11:59:14 +0000
+
+get-iplayer (3.14-ppa32~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Wed, 06 Jun 2018 22:20:25 +0000
+
+get-iplayer (3.14-ppa31d~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 76d0fc8: Release 3.14 [dinkypumpkin]
+  * 248f390: updated README [dinkypumpkin]
+  * 5d6a19d: updated --streaminfo output [dinkypumpkin]
+  * ad6ad1e: revamped recording modes, 50fps now default [dinkypumpkin]
+  * 07bffe4: added --thumbnail-size option alias [dinkypumpkin]
+  * aa8fd57: use PID-based schedule page URLs [dinkypumpkin]
+  * c864674: import modules during compilation [dinkypumpkin]
+  * 7cc728e: use HTTPS everywhere [dinkypumpkin]
+  * 3fd78b0: removed unnecessary module load [dinkypumpkin]
+  * f448d0e: removed unnecessary line from SSL verification warning
+    [dinkypumpkin]
+  * 69bedcc: tweaked verbose modes list [dinkypumpkin]
+  * 52e448c: Added --thumbnail-square option [notnac]
+  * 52dec8c: Ensure cache is always topped up to 30 days [dinkypumpkin]
+  * 0a031d2: Added programme credits download [notnac]
+  * 98f29bd: Convert DASH audio and video into MPEG-TS file before
+    converting to MP4 [notnac]
+  * 3a1276c: Restructure stream data retrieval [notnac]
+  * d8f7ae9: Web PVR: select default page size from values in dropdown
+    list [dinkypumpkin]
+  * ba1bd62: Web PVR: alternate sort direction when clicking column
+    headers in search results [dinkypumpkin]
+  * e130836: A statement from the Ministry of the Bleedin' Obvious
+    [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Mon, 07 May 2018 23:23:28 +0000
+
+get-iplayer (3.13-ppa31d~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 0753567: Release 3.13 [notnac]
+  * 63fe503: Updated cache refresh for changes in BBC schedule page
+    structure [notnac]
+  * 09a3f94: help text edits [dinkypumpkin]
+  * 575520f: any subtitles option will force subtitles download
+    [dinkypumpkin]
+  * 1c20fd0: open default options file on Windows as UTF-8
+    [dinkypumpkin]
+  * 1357a08: use more consistent environment variable names
+    [dinkypumpkin]
+  * df0d32b: use SSL hostname verification with Mojolicious
+    [dinkypumpkin]
+  * 4e03c06: Simplified stream data retrieval [notnac]
+  * ba4d692: don't allow pvr search or preset names to begin with hyphen
+    [dinkypumpkin]
+  * ad59725: HLS radio downloads are audio only [dinkypumpkin]
+  * 47e37e4: clean up formatting of verbose list of modes found
+    [dinkypumpkin]
+  * 3efab34: added "may no longer be available" message when no modes or
+    no streams [dinkypumpkin]
+  * 1806937: show CDN in download progress display [dinkypumpkin]
+  * c531691: Tell user that subtitles are being embedded in conversion
+    to MP4 [notnac]
+  * 9786f33: added tracklist download [dinkypumpkin]
+  * 7846af1: Implemented --pvr-series option [notnac]
+  * 575b078: Implemented --mark-downloaded option [notnac]
+  * 6791761: Refactored download by PID [notnac]
+  * c0d7521: Implemented --subs-embed option for embedding soft
+    subtitles [notnac]
+  * 2c1e611: Show warning for stream data load failure on retry [notnac]
+  * b048c7a: Remove unnecessary white space in S4C subtitles [notnac]
+  * fb9f856: Changed raw subtitles file extension from .ttxt to .ttml
+    [notnac]
+  * 8045b17: Fixed trimming of subtitles with --start and --start
+    [notnac]
+  * 26eb341: Only warn about existing thumbnail file with --thumbnail-
+    only or if --no-tag used with --thumbnail [notnac]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Sun, 25 Mar 2018 00:22:41 +0000
+
+get-iplayer (3.12-ppa31b~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * dae6b3b: Release 3.12 [dinkypumpkin]
+  * 9d6a22c: Sanitise version strings (redux) [dinkypumpkin]
+  * 06679b4: Revert "Sanitise version strings" [dinkypumpkin]
+  * 9076dab: bump dev version [dinkypumpkin]
+  * 5708096: Release 3.11 [dinkypumpkin]
+  * 3c60862: Merge branch 'contribute' into develop [dinkypumpkin]
+  * a7b56b5: Sanitise version strings [notnac]
+  * 4f43b7e: Revert "allow hyphens in version string in download resume
+    data" [notnac]
+  * 621e755: Merge branch 'contribute' into develop [dinkypumpkin]
+  * 13b6cda: allow hyphens in version string in download resume data
+    [notnac]
+  * f85ea88: avoid unnecessary schedule downloads with refresh limit
+    [dinkypumpkin]
+  * 70cfe83: don't check cache file for refresh unless necessary
+    [dinkypumpkin]
+  * 34d9ecf: don't load Time::Piece unless necessary [dinkypumpkin]
+  * 32bf2a7: Merge branch 'contribute' into develop [dinkypumpkin]
+  * 157a139: don't print search terms error message with --cache-
+    {rebuild,reset} [dinkypumpkin]
+  * e7c11a1: Fix schedule refresh with limit at start of year [Will
+    Elwood]
+  * 130ed64: bump dev version [dinkypumpkin]
+  * 3a77dee: Release 3.10 [dinkypumpkin]
+  * cd2cc44: don't print search terms error message with --refresh [Will
+    Elwood]
+  * 51d217b: bump dev version [dinkypumpkin]
+  * f2c5c48: Release 3.09 [dinkypumpkin]
+  * f9d2c96: don't print search terms error message with --type and --
+    refresh [dinkypumpkin]
+  * 79e4915: bump dev version [dinkypumpkin]
+  * bf6a7c6: Release 3.08 [dinkypumpkin]
+  * a1e028a: Merge branch 'contribute' into develop [dinkypumpkin]
+  * 7d23d3e: help text edits [dinkypumpkin]
+  * e370fdb: show error message if search term(s) not supplied and
+    search options used [dinkypumpkin]
+  * be9e69e: Added --download-abortonfail option [notnac]
+  * 0517811: Remove nulls from raw TTML subtitles [notnac]
+  * c37691d: tidy filename generation [dinkypumpkin]
+  * 9875414: force filename regeneration if version skipped
+    [dinkypumpkin]
+  * 57ec792: removed obsolete thumbnail sizes [dinkypumpkin]
+  * e1da1cb: make --streaminfo short-circuit with --pid [dinkypumpkin]
+  * c7afb5e: added --no-metadata option [dinkypumpkin]
+  * 79f2449: use .partial file with --subtitles-only [dinkypumpkin]
+  * 656a0fa: added substitution parameters: <subsfile> <subsraw>
+    [dinkypumpkin]
+  * a7b7b79: ignore empty search strings [dinkypumpkin]
+  * c4e8552: do not allow search args in default options file
+    [dinkypumpkin]
+  * 08ace2c: enable colour subtitles for S4C programmes [dinkypumpkin]
+  * c32d002: Merge branch 'master' into contribute [dinkypumpkin]
+  * 0f4298e: Updated README [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Sun, 14 Jan 2018 16:28:43 +0000
+
+get-iplayer (3.07-ppa31a~stable) stable; urgency=medium
+
+  * New upstream snapshot
+  * c55aa28: Release 3.07 [dinkypumpkin]
+  * 4bde2b4: print download error detail only with --verbose
+    [dinkypumpkin]
+  * a2befc8: fixed hash progress display [dinkypumpkin]
+  * 45e8d37: Merge branch 'contribute' into develop [dinkypumpkin]
+  * 5d101ce: require search string [dinkypumpkin]
+  * 8b50189: help text edit [dinkypumpkin]
+  * 4b9b673: Web PVR: ignore autorefresh/autopvrrun intervals <= 0
+    [dinkypumpkin]
+  * c2ba97c: Web PVR: make "Refresh Cache" use --refresh [dinkypumpkin]
+  * eaa48ec: print dynamic load errors with --verbose [dinkypumpkin]
+  * 10b7371: reverted to text-only progress display [dinkypumpkin]
+  * 1dc8f6c: added --audio-only option [dinkypumpkin]
+  * 3deaf84: Make HQ audio for "hls" modes opt-in with --hls-hq-audio
+    option [notnac]
+  * d1be3fc: always refresh tv before radio [dinkypumpkin]
+  * 7a5b6a4: move subtitle download after tagging [dinkypumpkin]
+  * 494006b: Print error detail for download failures [notnac]
+  * a4ab210: Detect unknown programme versions when --version includes
+    "default" [notnac]
+  * 473a72a: Reinstate --no-sanitise option [notnac]
+  * 8610466: Trim subtitles according to --start and --stop [notnac]
+  * 7ad8e9d: Use programme end date if possible to determine
+    availability [notnac]
+  * 588783c: trap libxml XML load errors and fail more gracefully
+    [dinkypumpkin]
+  * c596e02: adjust for stream priority clashes [dinkypumpkin]
+  * e7b615b: fixed --fps50 definition [dinkypumpkin]
+  * 85dfd5a: note user command execution in default output
+    [dinkypumpkin]
+  * 295a7e5: Replace directory separators in subdir names [notnac]
+  * 58198d4: Added missing World Service hlsaac streams to radio mode
+    shortcuts [notnac]
+  * 62f238f: Fix download URI catcher (#335) [Peter Oliver]
+  * fb3bc5f: bump dev version [dinkypumpkin]
+  * 3babbe1: Release 3.06 [dinkypumpkin]
+  * 2a80f28: Update PID detection in parsing of BBC TV schedule pages
+    [dinkypumpkin]
+  * d4da8ce: bump dev version [dinkypumpkin]
+  * 07d95f6: Release 3.05 [dinkypumpkin]
+  * c6178c1: clean up handling of internal options in PVR [dinkypumpkin]
+  * 4efb728: avoid duplicate versions for AD and SL programmes
+    [dinkypumpkin]
+  * 210289d: Web PVR: Allow https: URLs in Quick URL field and info page
+    [dinkypumpkin]
+  * 4910ae6: Merge branch 'master' into contribute [dinkypumpkin]
+  * c96c796: moved CONTRIBUTING.md [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Thu, 30 Nov 2017 19:08:43 +0000
+
+get-iplayer (3.04-ppa31~artful) artful; urgency=medium
+
+  * New upstream snapshot
+  * fac8d97: Release 3.04 [dinkypumpkin]
+  * bdf3c7e: fixed bug that caused MP4 conversions to fail when using
+    PVR [dinkypumpkin]
+  * c7e68c1: tweaks to logging output [dinkypumpkin]
+  * 6588555: don't warn about future programmes in pvr searches
+    [dinkypumpkin]
+  * da79f81: don't short-circuit --history with --force [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Thu, 05 Oct 2017 06:49:18 +0000
+
+get-iplayer (3.03-ppa30f~artful) artful; urgency=medium
+
+  * 5254c78: Release 3.03 [dinkypumpkin]
+  * 385781d: adjust tv/radio index number ranges [dinkypumpkin]
+  * 8cf8913: revamped logging output [dinkypumpkin]
+  * 6ed5c7b: tidy options files init [dinkypumpkin]
+  * 35d8e7b: download subtitles after media [dinkypumpkin]
+  * 2ed53d1: apply --no-hq-audio to all HLS TV streams [dinkypumpkin]
+  * 4cec85c: remove github templates [dinkypumpkin]
+  * e47bd12: Web PVR: update web site URL in header [dinkypumpkin]
+  * c0162b2: Only print warning if programmes more than 30 days old
+    found [dinkypumpkin]
+  * 187be9d: make --info short-circuit --get as it does --pid and --url
+    [dinkypumpkin]
+  * 5c915fd: --thumbsize now requires thumbnail image width
+    [dinkypumpkin]
+  * be98aaf: bring back hvfstd streams [dinkypumpkin]
+  * 8a870a1: fix up whitespace, remove redundant blank lines
+    [dinkypumpkin]
+  * ad877ca: defer external program initialisation until needed
+    [dinkypumpkin]
+  * 5e9a85f: Attempt to download higher-quality audio for "hls" modes
+    [dinkypumpkin]
+  * 944b8e9: fixed bug in History::clear() [dinkypumpkin]
+  * 907218a: apply sort before match limit [dinkypumpkin]
+  * 068a494: Web PVR: added --baseurl option for use with reverse proxy
+    [dinkypumpkin]
+  * d78f9b9: man page edits [dinkypumpkin]
+  * 6d6c1c2: ensure minimum XML::LibXML version (1.91) [dinkypumpkin]
+  * 7bc09da: only warn about future programme when using --pid or --url
+    [dinkypumpkin]
+  * 44e3136: print dividers for recursive downloads [dinkypumpkin]
+  * f96a34d: fixed bug that broke auxiliary actions (e.g., --info) with -
+    -pid and --url for programmes not in cache [dinkypumpkin]
+  * 8e777e3: Web PVR: bump dev version [dinkypumpkin]
+  * 9ff70aa: Merge branch 'master' into develop [dinkypumpkin]
+  * e2c5943: updated readme [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Sat, 30 Sep 2017 23:22:15 +0000
+
+get-iplayer (3.02-ppa30c~artful) artful; urgency=medium
+
+  * 6dab3c8: Release 3.02 [dinkypumpkin]
+  * d1345fa: stop download attempts for current programme on remux
+    failure [dinkypumpkin]
+  * dee8a03: tidied up some logging output [dinkypumpkin]
+  * 4e71b76: thumbnail recipe changes [dinkypumpkin]
+  * 0711c8c: Added support for World Service PIDs starting with "w"
+    [dinkypumpkin]
+  * c112166: Restore previous preference for episode image as thumbnail
+    [dinkypumpkin]
+  * a56f38f: Added --ffmpeg-loglevel [dinkypumpkin]
+  * 626a6eb: added --include-https [dinkypumpkin]
+  * 3f8fb93: no longer need to manipulate proxy env vars [dinkypumpkin]
+  * 51e803c: no more need for named pipe [dinkypumpkin]
+  * d41266b: adjustments to HLS stream data [dinkypumpkin]
+  * fe0ef8b: adjust to recover 128k audio for DASH TV programmes
+    [dinkypumpkin]
+  * 719afcd: Added --throttle option [dinkypumpkin]
+  * 5bc4bc2: make TV licence and HTML::Parser warnings contextual
+    [dinkypumpkin]
+  * a529ae2: fixed missing channel values in cache for Radio 1
+    [dinkypumpkin]
+  * a64e32c: updated "segment not available" warning [dinkypumpkin]
+  * 554bb64: streamlining of --pid download [dinkypumpkin]
+  * c804129: removed deprecated --noscrapeversions and --thumbsizecache
+    options [dinkypumpkin]
+  * 307513b: reclassify some recording options as output options
+    [dinkypumpkin]
+  * 88ca8ab: Make --metadata value optional [dinkypumpkin]
+  * 941dfca: avoid global destruction warnings in Perl <5.14
+    [dinkypumpkin]
+  * 7531996: soft load XML::LibXML::XPathContext [dinkypumpkin]
+  * 84595b3: convert DASH manifest parsing to XML::LibXML [dinkypumpkin]
+  * d6aedbd: tidy white space [dinkypumpkin]
+  * 8488406: tidy recursive page number display [dinkypumpkin]
+  * 918110a: removed deprecated --subsfmt option [dinkypumpkin]
+  * 31c1be2: removed obsolete channel lists [dinkypumpkin]
+  * 632108e: removed some obsolete comments [dinkypumpkin]
+  * af5f317: removed aod code [dinkypumpkin]
+  * 5c9cf5c: removed --ybbcy switching and code related to dead XML data
+    sources [dinkypumpkin]
+  * 4ba09a8: updated purge prompt [dinkypumpkin]
+  * dc68d0e: restore warning about buggy HTML::Parser [dinkypumpkin]
+  * d1e0980: removed obsolete help text [dinkypumpkin]
+  * 2fe78e9: corrected --exclude-supplier help text [dinkypumpkin]
+  * 5f908a6: avoid runaway loop if HLS playlist parser encounters
+    invalid attributes [dinkypumpkin]
+  * 5735819: correct spelling mistakes (#333) [Edward Betts]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Sat, 09 Sep 2017 22:01:19 +0000
+
+get-iplayer (3.01-ppa30b~artful) artful; urgency=medium
+
+  * 0ce919c: Release 3.01 [dinkypumpkin]
+  * 815a4d0: recursive recording fixes [dinkypumpkin]
+  * 42906d3: restore previous cache update logic [dinkypumpkin]
+  * 3c37f26: remove --cache-init [dinkypumpkin]
+  * eaf7801: added --ffmpeg-verbose [dinkypumpkin]
+  * e5fd5cc: call them file segments [dinkypumpkin]
+  * 1f215ce: Web PVR: change default cache refresh interval to 4 hours
+    (from 1 hour) [dinkypumpkin]
+  * cac2a6d: Revert "Web PVR: modify cache refresh page for changes in
+    programme indexing" [dinkypumpkin]
+  * f33bd9d: ensure old versions of XML::LibXML work in cache updates
+    [dinkypumpkin]
+  * 52089f1: added --cache-rebuild [dinkypumpkin]
+  * b48d40d: prevent overwrite of cached availability dates by repeat
+    listings [dinkypumpkin]
+  * 8791806: fixed "Undefined namespace prefix" error in subtitles
+    conversion [dinkypumpkin]
+  * d2cfe0b: remove reference to deleted option [dinkypumpkin]
+  * bc1337a: Merge commit 'b07be04fd48bf6169870b3fccc46c98085940a18'
+    into develop [dinkypumpkin]
+  * ed7f700: Merge branch 'abudden-feature/limitlength' into develop
+    [dinkypumpkin]
+  * 5345db4: Merge branch 'praxilian-feature/untypo' into develop
+    [dinkypumpkin]
+  * 4fc9dad: Added advanced option to allow filenames to be limited to
+    an arbitrary length [A. S. Budden]
+  * b07be04: Update README.md [dinkypumpkin]
+  * 1397f8e: Fix typos and inconsistencies [Ian Praxil]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Thu, 29 Jun 2017 22:02:38 +0000
+
+get-iplayer (3.00-ppa28~xenial) xenial; urgency=medium
+
+  * 5785707: Release 3.00 [dinkypumpkin]
+  * fe2cad0: Web PVR: modify cache refresh page for changes in programme
+    indexing [dinkypumpkin]
+  * cf425f5: retain existing logic for --refresh and --refresh-future
+    [dinkypumpkin]
+  * 24b643a: added --cache-init [dinkypumpkin]
+  * 1f1e605: update user agent strings [dinkypumpkin]
+  * 1c6684a: added support for kiddie programmes with --pid-recursive
+    [dinkypumpkin]
+  * 4aede31: update README [dinkypumpkin]
+  * 936fc24: don't filter "his" modes [dinkypumpkin]
+  * 8482136: test all versions for streams [dinkypumpkin]
+  * 879c293: removed --ybbcy [dinkypumpkin]
+  * c25ada7: deprecated --thumbsizecache [dinkypumpkin]
+  * e356baa: use hvf streams with 320k audio where available
+    [dinkypumpkin]
+  * 32a33c8: Add '-movflags faststart' to ffmpeg remux command with --no-
+    tag [dinkypumpkin]
+  * acedd29: force --ybbcy [dinkypumpkin]
+  * f054763: adjust threshold for iptv HLS streams [dinkypumpkin]
+  * 5ac86ba: update mode sort to handle larger numbers of streams
+    [dinkypumpkin]
+  * 6ed1345: removed Parallel::ForkManager variant of concurrent
+    indexing [dinkypumpkin]
+  * 7abeeac: deprecated some soon-to-be obsolete options [dinkypumpkin]
+  * 7f1c3e1: tweaks to --index-maxconn [dinkypumpkin]
+  * 03a1713: use delay instead of recurring timer with mojo indexing
+    [dinkypumpkin]
+  * 40166a8: set user agent string for mojo [dinkypumpkin]
+  * fa8adf3: tidy up concurrent indexing options [dinkypumpkin]
+  * f90cdfa: consolidate --index-maxconn init [dinkypumpkin]
+  * 3e08693: restore conditional loading [dinkypumpkin]
+  * 6c60d85: decode entities in cached text from HTML schedule pages
+    [dinkypumpkin]
+  * 48e822e: Removed cache thumbnail URL generation with HTML schedule
+    pages [dinkypumpkin]
+  * bd0bac3: use Mojolicious as first choice for concurrent indexing
+    [dinkypumpkin]
+  * 3522611: Allow normal refresh functions with --ybbcy [dinkypumpkin]
+  * 1032f22: Re-implement recursive downloading for use with --ybbcy
+    [dinkypumpkin]
+  * ace23fc: switch to JSON programme metadata [dinkypumpkin]
+  * c2431b1: don't escape <dir> in custom commands [dinkypumpkin]
+  * f703298: fail if --pid-recursive used with --ybbcy [dinkypumpkin]
+  * 301921c: Ensure title info extracted with fallback metadata
+    [dinkypumpkin]
+  * d5c28ef: Try all available subtitle streams if necessary
+    [dinkypumpkin]
+  * 8d2bab0: Incorporate new subtitle streams [dinkypumpkin]
+  * cbf7b5b: decode entities in mediaselector files [dinkypumpkin]
+  * b4b892d: Subtitles conversion revamped [dinkypumpkin]
+  * eb6d38f: Resolve HLS playlist redirect before generating segment
+    list [dinkypumpkin]
+  * fbef6fe: Removed support for RTMP (Flash) streams [dinkypumpkin]
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Mon, 01 May 2017 14:29:38 +0000
+
+get-iplayer (2.99-ppa28~xenial) xenial; urgency=medium
+
+  * 47898e3: Release 2.99 [dinkypumpkin]
+  * 6643df3: Revert "Removed support for RTMP (Flash) streams"
+    [dinkypumpkin]
+  * 7408421: Revert "Clean up 593957d" [dinkypumpkin]
+  * a4baef4: Revert "Clean up 593957d, part 2" [dinkypumpkin]
+  * d0ed979: Revert "Resolve HLS playlist redirect before generating
+    segment list" [dinkypumpkin]
+  * 67019d3: Revert "Added retries to HLS playlist redirect resolution"
+    [dinkypumpkin]
+  * 096b709: Guard against missing start segment number in DASH manifest
+    [dinkypumpkin]
+  * d5b569a: Ensure tv tried first when subtitles requested with --pid
+    [dinkypumpkin]
+  * b47a26b: Corrected remapping of old hvfvhigh mode [dinkypumpkin]
+  * a85803c: Added retries to HLS playlist redirect resolution
+    [dinkypumpkin]
+  * d360b27: Resolve HLS playlist redirect before generating segment
+    list [dinkypumpkin]
+  * 9fa6cc5: Clean up 593957d, part 2 [dinkypumpkin]
+  * d6ffa19: Clean up 593957d [dinkypumpkin]
+  * 593957d: Removed support for RTMP (Flash) streams [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Sun, 12 Feb 2017 00:12:57 +0000
+
+get-iplayer (2.98-ppa26~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * 1f0dde2: Release 2.98 [dinkypumpkin]
+  * 32ce692: Updated README [dinkypumpkin]
+  * 473dd97: Updated README [dinkypumpkin]
+  * b80ed6e: Updated SWF player URL [dinkypumpkin]
+  * 00e6d9f: Removed support for programme clips in recursive recording
+    [dinkypumpkin]
+  * a900fc6: Help text edit [dinkypumpkin]
+  * 29cec8e: Help text edits [dinkypumpkin]
+  * 3390181: Don't delete resume file on segment verification errors
+    [dinkypumpkin]
+  * 1519664: Deprecated --pid-recursive-noclips [dinkypumpkin]
+  * b311e70: Removed obsolete plugin loading [dinkypumpkin]
+  * af32a51: Web PVR: bump dev version [dinkypumpkin]
+  * 04080ed: Web PVR: updated tooltips [dinkypumpkin]
+  * aa9e841: Don't require --type with --pvr-queue --pid [dinkypumpkin]
+  * c424993: trim progress display back under 80 chars [dinkypumpkin]
+  * 862a70f: help text edits [dinkypumpkin]
+  * 56c1896: Don't use <rawaudio> for DASH radio programmes
+    [dinkypumpkin]
+  * 77bd56c: Allow final segment to be unavailable for HLS as well as
+    DASH [dinkypumpkin]
+  * e5754ad: Removed old HLS/DASH downloader [dinkypumpkin]
+  * bc36574: Fixed sequence number initialisation on resume
+    [dinkypumpkin]
+  * 841b079: Cleaned up handling of temp and raw files [dinkypumpkin]
+  * e2448d9: Another fix for geoblock check [dinkypumpkin]
+  * f9a38dd: Removed some more dead code [dinkypumpkin]
+  * bc50b46: Look for obsolete audio description designator
+    [dinkypumpkin]
+  * 4fa56f3: Revert "Avoid redundant calls to modelist()" [dinkypumpkin]
+  * fe1030d: Don't need regex for type tests [dinkypumpkin]
+  * e85c2a5: Use stricter regex for ffmpeg check [dinkypumpkin]
+  * 41630b0: More tweaks to ffmpeg checks [dinkypumpkin]
+  * 2304fcc: Removed obsolete media selector prefix [dinkypumpkin]
+  * d8e0d1b: Avoid redundant calls to modelist() [dinkypumpkin]
+  * ecf0e0f: Backport some changes to fallback downloader [dinkypumpkin]
+  * 536afa3: Use binary units where appropriate [dinkypumpkin]
+  * 37483b4: Add DASH streams to default TV modes [dinkypumpkin]
+  * 9741114: Fixed typo in ffmpeg warning [dinkypumpkin]
+  * 8311487: Fixed HLS/DASH 404 handling [dinkypumpkin]
+  * 8f9997d: Removed --no-sanitise option [dinkypumpkin]
+  * ef9550c: Tweaked ffmpeg checks [dinkypumpkin]
+  * 718b440: Added ffmpeg checks [dinkypumpkin]
+  * e7b4890: Explicitly remap "tv25fps" in mode list [dinkypumpkin]
+  * f633053: Help text updates for new recording modes [dinkypumpkin]
+  * 0318b63: Don't try additional versions if output file found
+    [dinkypumpkin]
+  * 5480912: Added support for DASH on-demand TV streams (remux requires
+    ffmpeg 3.0+) [dinkypumpkin]
+  * 654992e: Pick up HTTPS subtitle URLs if present [dinkypumpkin]
+  * da2cd24: Fix schedule refresh with limit at end of year [Will
+    Elwood]
+  * c44b730: Add segment size and duration to resume file [dinkypumpkin]
+  * 6eaf665: Ensure temp file name shorter than partial file name
+    [dinkypumpkin]
+  * 20972c5: Minor changes to resume file init [dinkypumpkin]
+  * 598b40b: No need to verify if file truncation fails on resume
+    [dinkypumpkin]
+  * 0146043: Use more precise glob pattern for resume file cleanup
+    [dinkypumpkin]
+  * 4dfbd6c: Fixed resume file cleanup on Windows [dinkypumpkin]
+  * 17f7a6d: Retain "tv25fps" as mode shortcut [dinkypumpkin]
+  * 6e1c13a: Web PVR: Remove "Add Search to PVR" button from Recordings
+    tab [dinkypumpkin]
+  * f8a9ef5: Update path length check to allow for download temp file
+    extension [dinkypumpkin]
+  * 906f425: Add path length check for resume file on Windows
+    [dinkypumpkin]
+  * 927e40a: Don't use retry unless necessary [dinkypumpkin]
+  * 33417ce: Suppress ffmpeg/AtomicParsley progress display in screen
+    output captured to file [dinkypumpkin]
+  * e3046c8: Clean up mode list remapping [dinkypumpkin]
+  * 91b89db: whitespace fixup [dinkypumpkin]
+  * 694282b: Minor changes to postproc remux [dinkypumpkin]
+  * ee2016d: New HLS/DASH downloader, downloads now resumable across
+    sessions [dinkypumpkin]
+  * 9791d5b: Don't make ISO dates with --no-sanitise [dinkypumpkin]
+  * c9d24fd: Move ISO date reformatting to sanitize_path [dinkypumpkin]
+  * bd31681: Fixed flashaac file extension [dinkypumpkin]
+  * df17d6e: Restore approximate total file size to HLS/DASH download
+    progress display [dinkypumpkin]
+  * 204ece2: Notify user if mode list remappings were performed
+    [dinkypumpkin]
+  * 7760f50: Updated --tvmode help text [dinkypumpkin]
+  * dea1711: Revamp flash modes, flashlow and flashnormal modes removed
+    [dinkypumpkin]
+  * eaa7ed8: Added --fps50 option to configure use of 50fps streams,
+    25fps now default [dinkypumpkin]
+  * c094657: Changes to HLS/DASH download progress display
+    [dinkypumpkin]
+  * f8f78bd: Add TV licence warning to copyright banner [dinkypumpkin]
+  * 205879f: Web PVR: Decouple startup initialisation from CLI
+    [dinkypumpkin]
+  * 66d9720: Removed some unused subroutines [dinkypumpkin]
+  * b3b94df: Various small fixes to programme metadata generation
+    [dinkypumpkin]
+  * 1b5160b: Remove fallback metadata method [dinkypumpkin]
+  * c7e6567: Updated --category, --exclude-category help text
+    [dinkypumpkin]
+  * 2b6f451: Un-deprecate some options [dinkypumpkin]
+  * 6f635f9: Check lower bitrate TV streams before declaring geoblock
+    [dinkypumpkin]
+  * d8110de: Updated radio station names to match BBC metadata
+    [dinkypumpkin]
+  * fce6fb9: Make explicit that substring match performed where regex
+    allowed [dinkypumpkin]
+  * 8ad486d: Changed --dump-options output [dinkypumpkin]
+  * 96c6097: Web PVR: Remove support for streaming of on-demand
+    programmes [dinkypumpkin]
+  * df9668b: Web PVR: Remove support for streaming and recording of live
+    programmes [dinkypumpkin]
+  * 31d0a31: Web PVR: Remove built-in support for alternative metadata
+    formats (Kodi/Freevo) [dinkypumpkin]
+  * 580e6ac: Web PVR: Remove podcast programme type [dinkypumpkin]
+  * 294e07e: Web PVR: Remove localfiles programme type [dinkypumpkin]
+  * e1bb021: Remove built-in support for alternative media output
+    formats or containers (MP3/AVI/MKV) [dinkypumpkin]
+  * a4ea547: Remove file name sanitisation options (replaced with
+    uniform scheme) [dinkypumpkin]
+  * b4182b3: Remove vestigial support for news and sport site videos and
+    other embedded media [dinkypumpkin]
+  * f3f750d: Remove customisation of ffmpeg options for remux
+    [dinkypumpkin]
+  * c013f6f: Remove option to use ffmpeg for on-demand downloads
+    [dinkypumpkin]
+  * 2e603f3: Remove support for streaming of on-demand programmes
+    [dinkypumpkin]
+  * 7892fed: Remove support for streaming and recording of live
+    programmes [dinkypumpkin]
+  * a83b239: Remove ID3 metadata tagging [dinkypumpkin]
+  * f8dd9b0: Remove obsolete tagging options (replaced by auto-
+    configuration) [dinkypumpkin]
+  * 58b94fb: Remove built-in support for alternative search results
+    formats (HTML/Freevo/MythTV) [dinkypumpkin]
+  * 4c46b3e: Remove built-in support for alternative metadata formats
+    (Kodi/Freevo) [dinkypumpkin]
+  * 32bc6f4: Remove email functions [dinkypumpkin]
+  * e242927: Remove multimode recording [dinkypumpkin]
+  * adf18b4: Remove symbolic linking of output files [dinkypumpkin]
+  * 5e396bc: Remove podcast programme type [dinkypumpkin]
+  * f2266d1: Remove localfiles programme type [dinkypumpkin]
+  * 4f3d23e: `ensure_array(undef)` should return an empty array [Will
+    Elwood]
+  * 7b10792: Remove unnecessary ffmpeg warnings with --raw
+    [dinkypumpkin]
+  * 4bebef4: Work around broken version metadata [dinkypumpkin]
+  * 3aeaa89: Implemented --command-tv and --command-radio options
+    [dinkypumpkin]
+  * 1733074: Support --pid and --pid-recursive from pvr searches created
+    with --pvr-add [dinkypumpkin]
+  * 4ed0be8: bump dev version [dinkypumpkin]
+  * 31d0103: Release 2.97 [dinkypumpkin]
+  * ce6ec50: Revert "Support --pid and --pid-recursive from pvr searches
+    created with --pvr-add" [dinkypumpkin]
+  * 8287a61: Revert "Implemented --command-tv and --command-radio
+    options" [dinkypumpkin]
+  * 8cf518f: Web PVR: ensure consistent display of boolean radio groups
+    [dinkypumpkin]
+  * 6d2765c: Web PVR: work around changes in Chrome 53, Opera 40 and
+    Firefox 49 [dinkypumpkin]
+  * 8b5459b: Remove images left behind by AtomicParsley [dinkypumpkin]
+  * c9fc039: Filter redundant AD streams [dinkypumpkin]
+  * 9183610: Add ffmpeg -loglevel and -stats options separately
+    [dinkypumpkin]
+  * ee16652: Implemented --command-tv and --command-radio options
+    [dinkypumpkin]
+  * 78d8b8c: Support --pid and --pid-recursive from pvr searches created
+    with --pvr-add [dinkypumpkin]
+  * 309e776: Re-include "hlsvhigh" into the default tvmodes...
+    [Vangelis66]
+  * 1b2dd6d: bump dev version [dinkypumpkin]
+  * a2700c0: Release 2.96 [dinkypumpkin]
+  * 289cb04: fixed makefile [dinkypumpkin]
+  * 4498524: use stricter regex for radio modes backcompat
+    [dinkypumpkin]
+  * 1fef371: help text edits for modes [dinkypumpkin]
+  * 5f85c44: Added tv25fps mode [dinkypumpkin]
+  * 6872189: Restored hlsaac modes to support bloody programme clips
+    [dinkypumpkin]
+  * afbd83d: Use combined hvf and hls modes as default for TV programmes
+    [dinkypumpkin]
+  * aeb81ac: Restored hls modes to support bloody programme clips
+    [dinkypumpkin]
+  * 401a9f3: Restored tagging to Makefile [dinkypumpkin]
+  * 13beb18: Tweaked messages for segment errors [dinkypumpkin]
+  * 2846e6f: Revert "Added --allow-gaps option (HLS and DASH only)"
+    [dinkypumpkin]
+  * 24537c2: Web PVR: restored dimming for history entries without
+    associated files [dinkypumpkin]
+  * feb1157: corrected default mode shortcuts [dinkypumpkin]
+  * a3faa80: Don't break if user insists on avconv [dinkypumpkin]
+  * ed0fca8: Re-remove preference for avconv if detected [dinkypumpkin]
+  * 01d955b: Fixed error message when attempting to stream DASH
+    [dinkypumpkin]
+  * 78e253d: Remove hls recording modes for TV programmes [dinkypumpkin]
+  * d157d45: help text edit [dinkypumpkin]
+  * eeaaefa: Restore previous preference for avconv if detected
+    [dinkypumpkin]
+  * 6918515: fixed typo [dinkypumpkin]
+  * e1ecbda: Added --allow-gaps option (HLS and DASH only)
+    [dinkypumpkin]
+  * 2f24537: Prevent remux of hvf with avconv, always prefer ffmpeg if
+    available [dinkypumpkin]
+  * dc45145: Better error handling if streamer cannot be instantiated
+    [dinkypumpkin]
+  * 9a1e38c: Added "haf" prefix to mode sort [dinkypumpkin]
+  * b025347: Make hvf default recording modes for TV [dinkypumpkin]
+  * 8be6681: Fixed "hvfbest" mode shortcut [dinkypumpkin]
+  * 8290ba6: Remove now-unnecessary fudge for hvf audiodescribed
+    programmes [dinkypumpkin]
+  * 2788a13: help text changes [dinkypumpkin]
+  * 48150e5: Prioritise DASH over HLS in default radio modes
+    [dinkypumpkin]
+  * 2ac4716: Revert to "flashaac" as prefix for flash radio modes
+    [dinkypumpkin]
+  * 15c440c: Expanded mode shortcut quality levels [dinkypumpkin]
+  * cbafcf3: Use "haf" prefix for radio HLS streams [dinkypumpkin]
+  * 1564276: "Segment not found" is now an error and aborts download
+    unless... [dinkypumpkin]
+  * 782f04a: Fixed delayed download progress display in Web PVR Manager
+    [dinkypumpkin]
+  * 9986f11: Fixed "cannot fork" error in Windows Web PVR Manager (with
+    caveats) [dinkypumpkin]
+  * 992d670: Relaxed schedule parsing to accommodate some future
+    programme listings [dinkypumpkin]
+  * 6b48739: Merge branch 'master' into develop [dinkypumpkin]
+  * c98e51c: Added 320k and 96k HLS streams for radio programmes
+    [dinkypumpkin]
+  * dff0f79: Fixed incorrect file extension in missing ffmpeg warning
+    for radio programmes [dinkypumpkin]
+  * f2f3922: bump dev version [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Tue, 07 Feb 2017 12:38:38 +0000
+
+get-iplayer (2.95-ppa23p7~xenial) xenial; urgency=medium
+
+  * New upstream snapshot
+  * bb3ab85: Merge branch 'release/2.95' [dinkypumpkin]
+  * a888881: Release 2.95 [dinkypumpkin]
+  * 2574357: Ignore --subdir with --history or --tag-only [dinkypumpkin]
+  * 21a2736: help text edits [dinkypumpkin]
+  * ede3079: Updated deprecated options [dinkypumpkin]
+  * 7e6fd31: README edits [dinkypumpkin]
+  * 87049c7: remove unused metadata field [dinkypumpkin]
+  * 2622be7: Help text edits [dinkypumpkin]
+  * 9f558f0: Fixed S4C live stream detection [dinkypumpkin]
+  * 1dd465f: Restored support for iPlayer live URLs [dinkypumpkin]
+  * 210879f: README edits [dinkypumpkin]
+  * c0e50db: Fixed flash mode shortcuts [dinkypumpkin]
+  * 2d1a92e: Set upper limit of 10 for --index-maxconn [dinkypumpkin]
+  * 96da6fc: help text edits [dinkypumpkin]
+  * fdb54f5: Simplified ignored/deprecated options warning
+    [dinkypumpkin]
+  * e83009a: Removed obsolete options [dinkypumpkin]
+  * 20b6f2e: Expanded mode shortcuts [dinkypumpkin]
+  * acb9d27: Makefile changes [dinkypumpkin]
+  * ae4fc8e: Don't show deprecated options with --help (intermediate
+    help) [dinkypumpkin]
+  * 285f40e: Omit concurrent indexing warnings on Windows unless
+    updating TV cache [dinkypumpkin]
+  * b79b0fa: help text edits [dinkypumpkin]
+  * bf6d7eb: Updated SWF player URL [dinkypumpkin]
+  * 3ced683: Updated deprecated options [dinkypumpkin]
+  * a68fcc6: Download correct subtitles for programme version
+    [dinkypumpkin]
+  * f2eb870: Merge branch 'hotfix/templates' into develop [dinkypumpkin]
+  * 56c4e67: Merge branch 'hotfix/templates' [dinkypumpkin]
+  * 35d6310: Added GitHub templates [dinkypumpkin]
+  * 8f344e9: Use combined HLS and DASH for default radio mode
+    [dinkypumpkin]
+  * ee7a049: Added support for concurrent indexing with --ybbcy (not
+    supported on Windows) [dinkypumpkin]
+  * 87cad5b: Ignore --refresh-future with --ybbcy [dinkypumpkin]
+  * 7887880: Removed web site files [dinkypumpkin]
+  * e4dee12: Edited README [dinkypumpkin]
+  * 838d0a8: Deprecated options [dinkypumpkin]
+  * 42f51ce: help text edits [dinkypumpkin]
+  * a38beb8: Restored support for sports site videos [dinkypumpkin]
+  * fc4929a: Stringify text nodes from HTML parsing [dinkypumpkin]
+  * b6c98c5: Restore SD regional channels for on-demand [dinkypumpkin]
+  * cd023e0: Implemented explicit check for geoblocking [dinkypumpkin]
+  * 02b8908: Fixed DASH programme duration parsing [dinkypumpkin]
+  * 158a6d8: Removed unnecessary warning [dinkypumpkin]
+  * 14d26af: Add --ybbcy option as stopgap for when BBC removes XML
+    resources [dinkypumpkin]
+  * ee97ef4: Use brand/series images for thumbnails [dinkypumpkin]
+  * 0f1f4f0: Updated --tag-utf8 help text [dinkypumpkin]
+  * 77714c6: Moved tagging options to Tagger class [dinkypumpkin]
+  * 9423892: Moved tag metadata generation to Tagger class
+    [dinkypumpkin]
+  * 4774184: Renamed --format-show and --format-title options
+    [dinkypumpkin]
+  * 6233ea0: Added --format-show and --format-title options
+    [dinkypumpkin]
+  * 9d6754f: Automatically detect optional AtomicParsley features
+    [dinkypumpkin]
+  * 21ec16e: Updated SWF player URL [dinkypumpkin]
+  * 3920fe9: Adjust threshold for hlsstd [dinkypumpkin]
+  * 409f3ab: Added --pid-recursive-noclips option [dinkypumpkin]
+  * 99d8c03: Merge branch 'hotfix/html' into develop [dinkypumpkin]
+  * 244941e: Merge branch 'hotfix/html' [dinkypumpkin]
+  * 944cb0c: Updated links in html page [dinkypumpkin]
+  * a32eac3: Restored support for news site videos [dinkypumpkin]
+  * 53e9c7f: Restored podcast support [dinkypumpkin]
+  * 37a2274: Removed obsolete code from built-in streamer [dinkypumpkin]
+  * 6c29543: Delegate live/on-demand streaming, live recording to ffmpeg
+    [dinkypumpkin]
+  * 91e06eb: Re-segregate DASH streams, make DASH default format for on-
+    demand radio [dinkypumpkin]
+  * d7a98bb: Corrected --info help text [dinkypumpkin]
+  * ac6e830: Removed BBC Three from available channels [dinkypumpkin]
+  * b456de6: Updated BBC London, World Service schedule URLs
+    [dinkypumpkin]
+  * 611370c: Removed categories and versions from default listing format
+    for radio/tv [dinkypumpkin]
+  * 3a440b2: Expand help text for --tag-utf8 [dinkypumpkin]
+  * 673793a: HLS is now default format for all programme types
+    [dinkypumpkin]
+  * fff0de5: Removed "dash" modes, use DASH for hishigh (on-demand radio
+    only) [dinkypumpkin]
+  * 232df93: Tweaks to mode list processing [dinkypumpkin]
+  * e213e61: Fixed naming/renaming of .partial files [dinkypumpkin]
+  * 488ab9b: Updated World Service HLS streams [dinkypumpkin]
+  * e2adee8: Tweaks to HLS streamer [dinkypumpkin]
+  * b4bc3d6: Updated SWF player URL [dinkypumpkin]
+  * 878b190: Renamed --stream-buffer to --stream-init [dinkypumpkin]
+  * 9d156a2: Restored missing import [dinkypumpkin]
+  * 77dc3ce: Made "no versions found" message more explicit
+    [dinkypumpkin]
+  * 9dad93c: Minor tidying of HLS/DASH streamer [dinkypumpkin]
+  * 9f6b8c6: Removed DASH live radio streams [dinkypumpkin]
+  * 59e86ed: Segregated video factory modes [dinkypumpkin]
+  * 9c17369: Fixed typo in tv index_max [dinkypumpkin]
+  * 40c6125: Changed --hls-encode to --hls-ffmpeg-encode [dinkypumpkin]
+  * 220199c: Improved progress display for live streaming [dinkypumpkin]
+  * 89063ab: Removed DASH tv streams [dinkypumpkin]
+  * e697b67: Removed RTMP->HLS mapping for R3 320k streams
+    [dinkypumpkin]
+  * ea287ac: Simplified determination of HLS audio described streams
+    [dinkypumpkin]
+  * 1b25ba2: Removed use of --versions in searches [dinkypumpkin]
+  * 833129e: Added warning about existing thumbnail file when tagging
+    [dinkypumpkin]
+  * b9adeaa: Updated fallback programme version data retrieval
+    [dinkypumpkin]
+  * 480f4b5: Revert "Temporary patch to restore downloading via --pid
+    and --url" [dinkypumpkin]
+  * e7bfcf5: Temporary patch to restore downloading via --pid and --url
+    [dinkypumpkin]
+  * ca17ed9: Don't display download errors until retries are exhausted.
+    [dinkypumpkin]
+  * 7643c91: Make 404 errors non-fatal for HLS/DASH streaming of on-
+    demand programmes [dinkypumpkin]
+  * 65c011e: Updated user agent strings [dinkypumpkin]
+  * dfa2d62: Reduced user agent instances created during cache refresh
+    [dinkypumpkin]
+  * 8a90279: Merged HLS/DASH streamers, added MPEG-DASH support for live
+    radio [dinkypumpkin]
+  * 4f5717d: Make --exclude-supplier more lenient [dinkypumpkin]
+  * d0d2587: Add shoutcast to mode sort [dinkypumpkin]
+  * f73bee5: Fixed typo in mode sort [dinkypumpkin]
+  * 773b7d8: Updated help text for --radiomode [dinkypumpkin]
+  * 8204cd9: Update help text for --tvmode and --livetvmode
+    [dinkypumpkin]
+  * 345225b: Fixed DASH mode shortcut [dinkypumpkin]
+  * b1fbc34: HLS changes: revert to 25fps as default, add hls50 shortcut
+    [dinkypumpkin]
+  * c07b02d: Added changelog file [dinkypumpkin]
+  * 5109a68: Makefile edits [dinkypumpkin]
+  * 8e6245d: Remove Windows installer files [dinkypumpkin]
+  * acba890: Remove obsolete plugins directory [dinkypumpkin]
+  * 314055a: More fixes for minimum download size checks [dinkypumpkin]
+  * f6addd7: Removed junk left over from DASH testing [dinkypumpkin]
+  * 06757b7: Removed obsolete choice of feeds [dinkypumpkin]
+  * 9610aef: Show deprecated options in man page and --dump-options
+    output [dinkypumpkin]
+  * 0b6a224: Adjusted MPEG-DASH bitrate thresholds [dinkypumpkin]
+  * 32e8318: Updated SWF player URL [dinkypumpkin]
+  * a5153fc: Skip store only version [dinkypumpkin]
+  * 94d71c6: Added MPEG-DASH support for radio programmes [dinkypumpkin]
+  * b8023b4: Added hls25fps mode alias [dinkypumpkin]
+  * d491f5c: Remove old HLS streams (except HD 25fps) [dinkypumpkin]
+  * b8eb716: Support remove/replace for MP4 artwork [dinkypumpkin]
+  * 879ead4: Use -loglevel error everywhere for ffmpeg [dinkypumpkin]
+  * 9a48d3a: Fixed check for minimum download size [dinkypumpkin]
+  * c33178c: Fix typo in podcast warning [dinkypumpkin]
+  * c8908f7: Suppress warnings for channels know to be missing XML
+    schedule data [dinkypumpkin]
+  * 0f51c7d: Prevent duplicate deprecation warnings with --prefs-show
+    [dinkypumpkin]
+  * a8ffd38: Remove --tag-force [dinkypumpkin]
+  * db80e37: Deprecate --mediaselector and --no-scrape-options
+    [dinkypumpkin]
+  * a93a48a: Force deprecated/ignored warnings to stderr [dinkypumpkin]
+  * 8ec9737: Fixed in reporting of deprecated/ignored options
+    [dinkypumpkin]
+  * 65c85be: Web PVR: Escape apostrophes in search string for "Add
+    Search to PVR" [dinkypumpkin]
+  * cef05d9: Revert "Deprecate --ffmpeg-obsolete option" [dinkypumpkin]
+  * 9f1d215: Minor help text edits [dinkypumpkin]
+  * 6da6600: Deprecate --ffmpeg-obsolete option [dinkypumpkin]
+  * 31a2463: Implemented warnings for options that are ignored
+    [dinkypumpkin]
+  * 5a5dca3: Forgot to mark --vlc as deprecated [dinkypumpkin]
+  * cb54efd: Add --available-since and --expires-before search options
+    [dinkypumpkin]
+  * f59f903: Web PVR: Suppress Perl 5.22 / CGI 4 warning [dinkypumpkin]
+  * 22f06c5: Web PVR: remove instruction for mode = "best"
+    [dinkypumpkin]
+  * 90b4e83: Clean up CSS rewrite in 183099c [dinkypumpkin]
+  * 183099c: Rewrite CSS for get_iplayer CGI to make it more readable
+    and visually consistent. [James Ross]
+  * 911b163: Fixed bug in --refresh-limit handling [dinkypumpkin]
+  * 6ce7c03: Fixed logic for warning about missing ffmpeg with live
+    streams [dinkypumpkin]
+  * c4fdbb0: Make --modes=best the default for all programme types
+    [dinkypumpkin]
+  * 0eae0f5: Made parsing of custom rtmpdump/ffmpeg options more
+    flexible [dinkypumpkin]
+  * 0d5c99c: Implemented built-in HLS streamer, live streaming changes
+    [dinkypumpkin]
+  * 9d1391f: Suppress Perl 5.22 warning from MP3::Tag [dinkypumpkin]
+  * 8e8a5ff: Adapt for news site new video page structure [dinkypumpkin]
+  * d929425: Set --isodate by default [dinkypumpkin]
+  * 9004efc: Made ffmpeg-based HLS streamer re-mux only by default
+    [dinkypumpkin]
+  * 668e561: Removed self-update functions [dinkypumpkin]
+  * 1c4dae7: Don't add metadata tags to podcasts by default
+    [dinkypumpkin]
+  * 02b91f9: Remove obsolete user agent type [dinkypumpkin]
+  * 0ad570d: Fall back to AOD feeds for radio stations with no schedule
+    data [dinkypumpkin]
+  * 3039154: Some whitespace cleanup [dinkypumpkin]
+  * 86d09e9: Set programme metadata before getting stream data
+    [dinkypumpkin]
+  * aba07ec: Deprecate obsolete streaming options to be removed in v2.96
+    [dinkypumpkin]
+  * 64541e9: Removed DDL modes and related streamer code [dinkypumpkin]
+  * 8309ade: Consolidate all tv and radio modes into single list
+    [dinkypumpkin]
+  * 4495ba2: Revamped HLS stream classification [dinkypumpkin]
+  * 45aa5a5: Web PVR: flush filtered ffmpeg progress output on close
+    [dinkypumpkin]
+  * 3d77c27: Fixed mode list sorting [dinkypumpkin]
+  * fea58bf: Omit additional unnecessary output if streaming
+    [dinkypumpkin]
+  * 9420d2c: Web PVR: added programme version support to
+    play/record/queue functions [dinkypumpkin]
+  * b01fa8b: Web PVR: no longer need explicit defaults for versionlist
+    and modes [dinkypumpkin]
+  * 69230de: Filter ffmpeg progress display into hashes for web pvr HLS
+    downloads [dinkypumpkin]
+  * 4449627: Omit some unnecessary output if streaming [dinkypumpkin]
+  * ec12711: Another fix for schedule entry with no expiry
+    [dinkypumpkin]
+  * f227dfb: Account for schedule entries with no expiry [dinkypumpkin]
+  * 348bbea: Don't generate a 'default' version [dinkypumpkin]
+  * 7ec3896: Don't search for audiodescribed/signed versions unless
+    specified [dinkypumpkin]
+  * 81724a1: Check ffmpeg for hlx modes [dinkypumpkin]
+  * 97216b2: Removed code for obsolete streaming formats [dinkypumpkin]
+  * 5dddb63: Ensure both hls and hlx streams for AD programmes
+    [dinkypumpkin]
+  * 37f87e9: Only set Windows default output directory once
+    [dinkypumpkin]
+  * 3931d9c: Set default output directory on Windows [dinkypumpkin]
+  * 6f9f8e9: Restore --aactomp3 compatibility with --
+    liveradiomode=shoutcastaac [Vangelis66]
+  * 36d5e21: Moved make-nsis.sh [dinkypumpkin]
+  * 6f81133: Added Video Factory HD live TV, revamped HLS streams
+    [dinkypumpkin]
+  * ec07cb6: Exclude Level3 CDN by default [dinkypumpkin]
+  * 03c5313: Added support for programme expiry (for 30-day cache)
+    [dinkypumpkin]
+  * a1ed014: Changed updating functions to use GitHub repo
+    [dinkypumpkin]
+  * df2dfa0: Changes to thumbnail downloading [dinkypumpkin]
+  * b04c451: Move obsolete documentation files to wiki [dinkypumpkin]
+  * 3e681c2: Removed --playlist-metadata option [dinkypumpkin]
+  * 751f2a6: Generate 320k HLS stream data from 320k RTMP stream data
+    [dinkypumpkin]
+  * e1ffd94: Improved warnings when specified/supported modes not
+    available [dinkypumpkin]
+  * b479595: Added --include-supplier option [dinkypumpkin]
+  * df110bc: Don't allow --update/--profile-dir to be saved in
+    prefs/presets [dinkypumpkin]
+  * 76c4588: Show programme info when no default version found
+    [dinkypumpkin]
+  * 3826599: Minor podcast changes [dinkypumpkin]
+  * f7e1270: Print full error message when XML parsing fails for
+    programme metadata [dinkypumpkin]
+  * a77f7c2: Fix support for obsolete ffmpeg versions in
+    HLS/DDL/Shoutcast streamers [dinkypumpkin]
+  * 08bc04e: Removed ION feeds [dinkypumpkin]
+  * 8589154: Moved plugins to main script [dinkypumpkin]
+  * 0fc7f1f: Restore HLS ffmpeg loglevels [dinkypumpkin]
+  * fabb676: Don't use URI::has_recognized_scheme [dinkypumpkin]
+  * 09e5316: Ensure <desclong> populated for podcasts [dinkypumpkin]
+  * fa8584c: Collapse paragraphs in podcast descriptions [dinkypumpkin]
+  * 96c11c6: Added support for iPlayer download links (bbc-ipd URL
+    scheme) [dinkypumpkin]
+  * 8d82b38: parse_rdf_series: handle multiple series gracefully [Alexey
+    Tourbin]
+  * e112498: Fixes for --tag-only [dinkypumpkin]
+  * 4a4796a: Change default version selection [dinkypumpkin]
+  * 9d58778: Support obsolete ffmpeg versions in HLS/DDL streamers
+    [dinkypumpkin]
+  * 8dbc36b: Segregate Video Factory HLS streams into separate recording
+    modes [dinkypumpkin]
+  * 9601317: Added support for relative HLS stream URLs [dinkypumpkin]
+  * 6330dc1: Decode entities in HLS stream URLs [dinkypumpkin]
+  * 6497eca: Updated SWF player URL [dinkypumpkin]
+  * 52a2c12: Merge branch 'hotfix/readme' [dinkypumpkin]
+  * 992f83f: Merge branch 'hotfix/readme' into develop [dinkypumpkin]
+  * 80a816f: Change README to refer all users to installation
+    instructions [dinkypumpkin]
+
+ -- Jon Davies - Build Bot <jon@hedgerows.org.uk>  Wed, 13 Jul 2016 16:37:52 +0000
+
+get-iplayer (2.94-0-ge8e81942-ppa10~precise) precise; urgency=low
+
+  * new upstream release
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Wed, 03 Jun 2015 20:02:11 +0100
+
+get-iplayer (2.82-49-gf7fae0f-ppa10~precise) precise; urgency=low
+
+  * ppa10 changes:
+  * additional dependencies
+  * change pi and precise onwards builds to use avconv
+  * drop oneiric as this is EOL
+  * cleanup pre-precise builds for just lucid
+  * update version patches to use new version string
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Wed, 19 Jun 2013 22:05:13 +0100
+
+get-iplayer (2.82-16-gb67b643-ppa9~precise) precise; urgency=low
+
+  * ppa9 changes - drop support for maverick and natty as these are EOL
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Wed, 24 Apr 2013 23:38:13 +0100
+
+get-iplayer (2.82-16-gb67b643-ppa8~precise) precise; urgency=low
+
+  * ppa8 changes - change options file to stop setting default
+  * values for tvmode and radiomode, and replace with modes best
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Fri, 04 Jan 2013 13:12:52 +0000
+
+get-iplayer (2.82-4-gc3aafce-ppa7~) precise; urgency=low
+
+  * ppa7 changes - add dependency on libxml-simple-perl
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Tue, 28 Aug 2012 19:51:18 +0100
+
+get-iplayer (2.80+n18-gitace42f3-ppa5) lucid; urgency=low
+
+  * New upstream snapshot, see README.git-log
+  * Incorporated changes to debian packaging from v2.80-2
+  * Now includes get_iplayer_web_pvr
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Thu, 02 Feb 2012 13:31:13 +0000
+
+get-iplayer (2.80+n15-git050a4a1-ppa4) lucid; urgency=low
+
+  * New upstream snapshot, see README.git-log
+  * includes fix for --refresh-future
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Fri, 06 Jan 2012 14:19:00 +0000
+
+get-iplayer (2.80+n3-gitc313712-ppa3) lucid; urgency=low
+
+  * Fix librtmp dependency
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Fri, 14 Oct 2011 20:23:05 +0100
+
+get-iplayer (2.80+n3-gitc313712-ppa2) lucid; urgency=low
+
+  * New upstream snapshot, see README.git-log
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Tue, 30 Aug 2011 22:25:04 +0100
+
+get-iplayer (2.79+n22-git30c5e3c-ppa2) lucid; urgency=low
+
+  * New upstream snapshot, see README.git-log
+  * Adjust dependencies to remove id3v2
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Wed, 17 Aug 2011 20:51:38 +0100
+
+get-iplayer (2.79+n14-git24ed32b-ppa2) lucid; urgency=low
+
+  * New upstream snapshot, see README.git-log
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Sat, 11 Jun 2011 19:13:07 +0100
+
+get-iplayer (2.79+gitac42bd4-ppa2~lucid) lucid; urgency=low
+
+  * New upstream snapshot
+  * fix error in patch packaging
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Tue, 07 Jun 2011 14:32:07 +0100
+
+get-iplayer (2.79+git83f4823-ppa1~maverick) maverick; urgency=low
+
+  * New upstream snapshot
+  * Adjust dependencies
+  * see README.git-log for changes since 2.79
+
+ -- Jon Davies <jon@hedgerows.org.uk>  Thu, 26 May 2011 21:43:42 +0100
+
+get-iplayer (2.79-1) unstable; urgency=low
+
+  * New upstream release (closes: #608955, #608956, #608958)
+  * Update my email address and remove DMUA flag
+  * Standards version 3.9.1 (no changes)
+  * Update debian/copyright, including formatting according to new DEP-5
+    spec
+  * Patches applied upstream:
+      manpage
+      livetv-587146
+
+ -- Jonathan Wiltshire <jmw@debian.org>  Sun, 09 Jan 2011 20:45:39 +0000
+
+get-iplayer (2.78-2) unstable; urgency=low
+
+  * New patch livetv-587146 from upstream: fix live streaming of BBC One
+    (Closes: #587146)
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Fri, 25 Jun 2010 15:51:24 +0100
+
+get-iplayer (2.78-1) unstable; urgency=low
+
+  * New upstream release
+      Closes: #582812, #582905
+      LP: #505433
+  * Update watch file
+  * Patch limelight-cdn-582659 is integrated upstream
+  * New patch manpage to include manual, temporarily until this is fixed
+    upstream
+  * Remove old NEWS
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Sat, 29 May 2010 14:08:44 +0100
+
+get-iplayer (2.76-2) unstable; urgency=low
+
+  * Use source Format: 3.0 (quilt)
+  * New patch limelight-cdn-582659 after the BBC changed their CDN paths
+    (Closes: #582659) - thanks to fsck
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Sun, 23 May 2010 18:14:06 +0100
+
+get-iplayer (2.76-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/source/format: explicitly declare format 1.0
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Sun, 04 Apr 2010 16:06:48 +0100
+
+get-iplayer (2.68-1) unstable; urgency=medium
+
+  * New upstream release fixes total breakage
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Tue, 23 Feb 2010 08:13:21 +0000
+
+get-iplayer (2.66-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards version 3.8.4
+  * debian/patches/no-warn-etc: integrated upstream
+  * Remove quilt dependency and logic, now that there are no outstanding
+    patches
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Fri, 29 Jan 2010 00:05:17 +0000
+
+get-iplayer (2.51-1) unstable; urgency=medium
+
+  * New upstream release fixes total breakage
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Wed, 23 Dec 2009 16:43:39 +0000
+
+get-iplayer (2.49-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/rules, debian/control: Add quilt patch system
+  * Move configuration to /etc/get_iplayer (closes: #558098)
+    - patch no-warn-etc: get_iplayer: load configuration from /etc and do
+      not warn about it
+    - debian/install: Install configuration to /etc/get_iplayer/options
+    - link /var/link/get_iplayer/options to /etc/get_iplayer/options
+      until upstream fix it properly
+    - during installation, copy local modifications to the new options file
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Thu, 26 Nov 2009 19:08:35 +0000
+
+get-iplayer (2.47-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: add Recommends for AtomicParsley
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Mon, 09 Nov 2009 09:04:00 +0000
+
+get-iplayer (2.41-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Sun, 18 Oct 2009 15:03:19 +0100
+
+get-iplayer (2.39-1) unstable; urgency=low
+
+  * New upstream release
+  * Tidy long description formatting (Closes: #543769)
+  * Remove suggestion for package lame (Closes: #548342)
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Fri, 25 Sep 2009 19:05:22 +0100
+
+get-iplayer (2.36-1) unstable; urgency=low
+
+  [ Jonathan Wiltshire ]
+  * New upstream release
+  * Add recommendation for libmp3-info-perl (MP3::Info)
+
+  [ Martin Meredith ]
+  * Added DM-Upload-Allowed field to control
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Thu, 17 Sep 2009 17:29:51 +0100
+
+get-iplayer (2.26-1) unstable; urgency=low
+
+  * New upstream version
+  * Set section to video from misc
+  * Add Recommends: flvstreamer, id3v2; Suggests: mplayer, ffmpeg, lame
+    (Closes: #545130)
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Sat, 05 Sep 2009 17:53:47 +0100
+
+get-iplayer (2.22-1) unstable; urgency=low
+
+  * New upstream version
+  * Standards-Version 3.8.3 (no changes required)
+  * Install options to /var/lib/get_iplayer
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Sat, 29 Aug 2009 20:52:27 +0100
+
+get-iplayer (2.09-1) unstable; urgency=low
+
+  * Initial release (Closes: #512754)
+
+ -- Jonathan Wiltshire <debian@jwiltshire.org.uk>  Mon, 13 Jul 2009 23:26:34 +0100
