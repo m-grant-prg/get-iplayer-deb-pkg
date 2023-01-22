@@ -1,4 +1,4 @@
-get-iplayer (3.31-1+deb11u1) UNRELEASED; urgency=medium
+get-iplayer (3.31-1+deb11u1) bullseye; urgency=medium
 
   * New upstream release.
   * 4d2e55a: Release 3.31 [notnac]
@@ -8,7 +8,7 @@ get-iplayer (3.31-1+deb11u1) UNRELEASED; urgency=medium
   * f46131b: guard against bogus <timeadded> values [notnac]
   * Update Debian files Copyright for 2023.
 
- -- Mark Grant <m.grant.prg@gmail.com>  Sun, 22 Jan 2023 10:32:17 +0000
+ -- Mark Grant <m.grant.prg@gmail.com>  Sun, 22 Jan 2023 10:38:37 +0000
 
 get-iplayer (3.30-1+deb11u1) bullseye; urgency=medium
 
