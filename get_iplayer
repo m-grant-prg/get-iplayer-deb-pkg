@@ -24,7 +24,7 @@
 #
 #
 package main;
-my $version = 3.30;
+my $version = 3.31;
 my $version_text;
 $version_text = sprintf("v%.2f", $version) unless $version_text;
 #
@@ -1670,7 +1670,7 @@ sub get_links {
 			$prog_old->{ $record_entries->{pid} } = $record_entries;
 			# Copy pid into index_prog_old hash
 			$index_prog_old->{ $record_entries->{index} } = $record_entries->{pid};
-			if ( ! $opt->{cacherebuild} && $record_entries->{timeadded} > $mra )
+			if ( ! $opt->{cacherebuild} && $record_entries->{timeadded} > $mra && $record_entries->{timeadded} <= $now)
 			{
 				$mra = $record_entries->{timeadded};
 			}
@@ -1742,6 +1742,9 @@ sub get_links {
 					# if the entry was in old cache then retain timestamp from old entry
 					if ( $prog_old->{ $this->{pid} }->{timeadded} ) {
 						my $ta = $prog_old->{ $this->{pid} }->{timeadded};
+						if ( $ta > $now || $ta < 0 ) {
+							$ta = $now;
+						}
 						my $available = Programme::get_time_string( $this->{available} );
 						if ( $ta <= $available && $available <= $now ) {
 							$this->{timeadded} = $now;
@@ -2534,7 +2537,7 @@ sub usage {
 		'This applies even if the base option name already begins with "no-", e.g., --no-no-tag or --no-no-artwork',
 	);
 	push @man,
-		'.TH GET_IPLAYER "1" "May 2022" "Phil Lewis" "get_iplayer Manual"',
+		'.TH GET_IPLAYER "1" "January 2023" "Phil Lewis" "get_iplayer Manual"',
 		'.SH NAME', 'get_iplayer - Stream Recording tool and PVR for BBC iPlayer and BBC Sounds',
 		'.SH SYNOPSIS',
 		'\fBget_iplayer\fR [<options>] [<regex|index> ...]',
@@ -3989,6 +3992,13 @@ sub create_metadata_file {
 	if ( not defined $template->{ $opt->{metadata} } ) {
 		main::logger "WARNING: metadata type '$opt->{metadata}' is not valid - must be one of: ".(join ',', keys %{$template} )."\n";
 		return;
+	}
+
+	# Don't recreate metadata file if the file already exists
+	if ( -f $filename->{ $opt->{metadata} } && ! $opt->{overwrite} ) {
+		main::logger "INFO: Metadata file already exists: $filename->{ $opt->{metadata} }\n";
+		main::logger "INFO: Use --overwrite to re-download\n";
+		return 0;
 	}
 
 	main::logger "INFO: Writing metadata\n";
@@ -9363,7 +9373,7 @@ sub tags_from_metadata {
 	$tags->{lyrics} = $meta->{desclong};
 	$tags->{lyrics} .= "\n\nPLAY: $meta->{player}" if $meta->{player};
 	$tags->{lyrics} .= "\n\nINFO: $meta->{web}" if $meta->{web};
-	$tags->{hdvideo} = $meta->{mode} =~ /hd/i ? 'true' : 'false';
+	$tags->{hdvideo} = $meta->{mode} =~ /hd/i ? ( $meta->{mode} =~ /fhd/i ? 2 : 1 ) : 0;
 	$tags->{TVShowName} = $meta->{show};
 	$tags->{TVEpisode} = $meta->{sesort} || $meta->{pid};
 	$tags->{TVSeasonNum} = $tags->{disk};
@@ -9494,6 +9504,7 @@ sub tag_init {
 	# determine AtomicParsley features
 	my $ap_help = `"$bin->{atomicparsley}" --help 2>&1`;
 	$opt->{myaphdvideo} = 1 if $ap_help =~ /--hdvideo/;
+	$opt->{myap1080p} = 1 if $opt->{myaphdvideo} && $ap_help =~ /1080p/;
 	$opt->{myaplongdesc} = 1 if $ap_help =~ /--longdesc/;
 	$opt->{myaplongdescription} = 1 if $ap_help =~ /--longDescription/;
 	$opt->{myaplongdescfile} = 1 if $ap_help =~ /--longdescFile/;
@@ -9530,7 +9541,12 @@ sub tag_cmd {
 	# video only
 	if ( $tags->{is_video} ) {
 		# all video
-		push @cmd, ( '--hdvideo', $tags->{hdvideo} ) if $opt->{myaphdvideo};
+		if ( $opt->{myaphdvideo} ) {
+			if ( ! $opt->{myap1080p} ) {
+				$tags->{hdvideo} = $tags->{hdvideo} > 0 ? "true" : "false";
+			}
+			push @cmd, ( '--hdvideo', $tags->{hdvideo} );
+		}
 		# tv only
 		if ( $tags->{is_tvshow} ) {
 			push @cmd, (
