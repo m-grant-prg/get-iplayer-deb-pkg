@@ -5,6 +5,7 @@ get-iplayer (3.31-1+deb9u1) UNRELEASED; urgency=medium
   * b0e83ef: Merge branch 'master' into develop [notnac]
   * 0cf04ec: Fix metadata file always being overwritten [John Veness]
   * f46131b: guard against bogus <timeadded> values [notnac]
+  * Update Debian files Copyright for 2023.
 
  -- Mark Grant <m.grant.prg@gmail.com>  Sun, 22 Jan 2023 13:46:09 +0000
 
