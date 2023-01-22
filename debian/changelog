@@ -1,4 +1,4 @@
-get-iplayer (3.31-1ubuntu16.04u1) UNRELEASED; urgency=medium
+get-iplayer (3.31-1ubuntu16.04u1) xenial; urgency=medium
 
   * 4d2e55a: Release 3.31 [notnac]
   * f7dcdd5: set 1080p flag with recent versions of AtomicParsley [notnac]
@@ -7,7 +7,7 @@ get-iplayer (3.31-1ubuntu16.04u1) UNRELEASED; urgency=medium
   * f46131b: guard against bogus <timeadded> values [notnac]
   * Update Debian files Copyright for 2023.
 
- -- Mark Grant <m.grant.prg@gmail.com>  Sun, 22 Jan 2023 14:35:23 +0000
+ -- Mark Grant <m.grant.prg@gmail.com>  Sun, 22 Jan 2023 14:37:31 +0000
 
 get-iplayer (3.30-1ubuntu16.04u1) xenial; urgency=medium
 
