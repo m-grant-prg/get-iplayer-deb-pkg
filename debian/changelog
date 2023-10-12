@@ -1,3 +1,12 @@
+get-iplayer (3.33-1ubuntu16.04u1) xenial; urgency=medium
+
+  * 390bc096: Release 3.33 [notnac]
+  * b0f1c562: Web PVR: update copyright notice [notnac]
+  * fd5198db: Revert "display options without equals signs" [notnac]
+  * 69daded6: change warning text for no available streams [notnac]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Thu, 12 Oct 2023 15:53:22 +0100
+
 get-iplayer (3.32-1ubuntu16.04u1) xenial; urgency=medium
 
   * b5410669: Release 3.32 [notnac]
