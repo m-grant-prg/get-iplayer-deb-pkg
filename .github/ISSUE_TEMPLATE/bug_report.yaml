@@ -38,10 +38,10 @@ body:
       required: true
 - type: checkboxes
   attributes:
-    label: Ensure that you are using get_iplayer 3.31 or higher. If not, your report will be ignored.
+    label: Ensure that you are using get_iplayer 3.32 or higher. If not, your report will be ignored.
     description: Check version with **`get_iplayer -V` or see the bottom of the Web PVR search page**
     options:
-    - label: I am using get_iplayer 3.31 or higher
+    - label: I am using get_iplayer 3.32 or higher
       required: true
 - type: input
   attributes:
@@ -67,15 +67,15 @@ body:
 - type: markdown
   attributes:
     value: |
-      ## Create a verbose log file for the bug, e.g., "log.txt" using the `--verbose` option:
+      ## Create a verbose log file for the bug (e.g., "log.txt") using the `--verbose` option:
       ```bash
       get_iplayer [your options here] --verbose > log.txt 2>&1
       ```
-      ### Do not truncate or excerpt the log file. If you do, your report will be ignored. If you are using the Web PVR, copy output from both your web browser and the Web PVR console window and paste it into a plain text file. Do not omit the console window output showing the get_iplayer command(s) invoked by the Web PVR. If you do, your report will be ignored. To minimise the amount of output in the console window, quit and restart the Web PVR, then immediately execute the command that demonstrates the bug.
+      ### Do not truncate or excerpt your verbose log file. If you do, your report will be ignored. If you are using the Web PVR, copy output from both your web browser and the Web PVR console window and paste it into a plain text file. Do not omit the console window output showing the get_iplayer command(s) invoked by the Web PVR. If you do, your report will be ignored. To minimise the amount of output in the console window, quit and restart the Web PVR, then immediately execute the command that demonstrates the bug.
       ### Do not submit screenshots instead of a log file. If you do, your report will be ignored.
 - type: textarea
   attributes:
-    label: Drag the log file into the field below to create an attachment. The log file must be added as an attachment. Do not paste its contents into the field below. If you do, your report will be ignored. You may enter a URL linking to your log file on a pastebin site. If the bug prevents get_iplayer from running, enter "N/A" in the field below. If you enter any other text in the field below, your report will be ignored.
+    label: Drag your verbose log file into the field below to create an attachment. Your verbose log file must be added as an attachment. Do not paste its contents into the field below. If you do, your report will be ignored. You may enter a URL linking to your verbose log file on a pastebin site. If the bug prevents get_iplayer from running, enter "N/A" in the field below. If you enter any other text in the field below, your report will be ignored.
   validations:
     required: true
 - type: input
