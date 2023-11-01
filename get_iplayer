@@ -23,7 +23,7 @@
 #
 #
 package main;
-my $version = 3.33;
+my $version = 3.34;
 my $version_text;
 $version_text = sprintf("v%.2f", $version) unless $version_text;
 #
@@ -5031,6 +5031,7 @@ sub get_verpids_json {
 	my ( $prog, $ua ) = @_;
 	my $pid = $prog->{pid};
 	my $url = "https://www.bbc.co.uk/programmes/$pid/playlist.json";
+	my $version_map = { "default" => "", "audiodescribed" => "ad", "signed" => "sign", "combined" => "" };
 	main::logger "INFO: iPlayer metadata URL (JSON) = $url\n" if $opt->{verbose};
 	my $json = main::request_url_retry( $ua, $url, 3, undef, undef, undef, undef, 1 );
 	if ( $json ) {
@@ -5071,7 +5072,6 @@ sub get_verpids_json {
 		main::logger "WARNING: Could not download version PID metadata from $url\n";
 	}
 	$prog->{versions} = join ',', keys %{ $prog->{verpids} };
-	my $version_map = { "default" => "", "audiodescribed" => "ad", "signed" => "sign", "combined" => "" };
 	my $version_list = $opt->{versionlist} || $prog->{versions};
 	for ( split /,/, $version_list ) {
 		if ( $prog->{verpids}->{$_} ) {
@@ -5079,7 +5079,7 @@ sub get_verpids_json {
 			if ( $prog->{type} eq 'tv' ) {
 				$episode_url = "https://www.bbc.co.uk/iplayer/episode/$pid/$version_map->{$_}";
 			} elsif ( $prog->{type} eq 'radio' ) {
-				$episode_url = "https://www.bbc.co.uk/programmes/$pid";
+				$episode_url = "https://www.bbc.co.uk/sounds/play/$pid";
 			}
 			unless ( $prog->{player} ) {
 				$prog->{player} = $episode_url if $episode_url;
@@ -5087,11 +5087,7 @@ sub get_verpids_json {
 			}
 		}
 	}
-	my $found;
-	for ( keys %{ $prog->{verpids} } ) {
-		$found = 1 if $version_list =~ /$_/ && $prog->{verpids}->{$_};
-		last if $found;
-	}
+	my $found = keys %{ $prog->{verpids} } > 0;
 	return 1 if ! $found;
 	return 0;
 }
@@ -5119,9 +5115,8 @@ sub get_verpids_html_radio {
 sub get_verpids_html {
 	my ( $prog, $ua ) = @_;
 	my $pid = $prog->{pid};
-	my $version_list = $opt->{versionlist} || 'default';
-	my $version_map = { "default" => "", "audiodescribed" => "ad", "signed" => "sign", "combined" => "" };
-	for my $version ( "default", "audiodescribed", "signed", "combined" ) {
+	my $version_map = { "default" => "", "audiodescribed" => "ad", "signed" => "sign" };
+	for my $version ( "default", "audiodescribed", "signed" ) {
 		next if $prog->{verpids}->{$version};
 		my $html;
 		my $url = "https://www.bbc.co.uk/iplayer/episode/$pid/$version_map->{$version}";
@@ -5189,13 +5184,14 @@ sub get_verpids_html {
 		$prog->{durations}->{$version} = $1 if $config =~ /"duration":(\d+)/;
 	}
 	$prog->{versions} = join ',', keys %{ $prog->{verpids} };
+	my $version_list = $opt->{versionlist} || $prog->{versions};
 	for ( split /,/, $version_list ) {
 		if ( $prog->{verpids}->{$_} ) {
 			my $episode_url;
 			if ( $prog->{type} eq 'tv' ) {
 				$episode_url = "https://www.bbc.co.uk/iplayer/episode/$pid/$version_map->{$_}";
 			} elsif ( $prog->{type} eq 'radio' ) {
-				$episode_url = "https://www.bbc.co.uk/programmes/$pid";
+				$episode_url = "https://www.bbc.co.uk/sounds/play/$pid";
 			}
 			unless ( $prog->{player} ) {
 				$prog->{player} = $episode_url if $episode_url;
@@ -5203,11 +5199,7 @@ sub get_verpids_html {
 			}
 		}
 	}
-	my $found;
-	for ( keys %{ $prog->{verpids} } ) {
-		$found = 1 if $version_list =~ /$_/ && $prog->{verpids}->{$_};
-		last if $found;
-	}
+	my $found = keys %{ $prog->{verpids} } > 0;
 	return 1 if ! $found;
 	return 0;
 }
@@ -5293,7 +5285,7 @@ sub get_metadata {
 				if ( $prog_type eq "tv" && $doc->{type} eq "episode" ) {
 					$player = "https://www.bbc.co.uk/iplayer/episode/$pid";
 				} else {
-					$player = "https://www.bbc.co.uk/programmes/$pid";
+					$player = "https://www.bbc.co.uk/sounds/play/$pid";
 				}
 				# title strings
 				my ($series_position, $subseries_position);
