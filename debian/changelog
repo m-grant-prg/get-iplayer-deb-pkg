@@ -1,3 +1,13 @@
+get-iplayer (3.34-1ubuntu20.04u1) focal; urgency=medium
+
+  * 0cbb5bb3: Release 3.34 [notnac]
+  * 8210681a: remove duplicate html metadata scrape [notnac]
+  * 176a03ab: use Sounds page for <player> with radio programmes [notnac]
+  * 0f70bd8a: fix download failure with --versions=default [notnac]
+  * Re-order Depends to ease cherry picking into Ubuntu [Mark Grant]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Wed, 01 Nov 2023 15:24:25 +0000
+
 get-iplayer (3.33-1ubuntu20.04u1) focal; urgency=medium
 
   * 390bc096: Release 3.33 [notnac]
