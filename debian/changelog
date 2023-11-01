@@ -1,3 +1,15 @@
+get-iplayer (3.34-1+deb11u1) bullseye; urgency=medium
+
+  * d59a76b2: Update upstream source from tag 'upstream/3.34' [Mark Grant]
+  * 3af35083: New upstream version 3.34 [Mark Grant]
+  * 0cbb5bb3: Release 3.34 [notnac]
+  * 8210681a: remove duplicate html metadata scrape [notnac]
+  * 176a03ab: use Sounds page for <player> with radio programmes [notnac]
+  * 0f70bd8a: fix download failure with --versions=default [notnac]
+  * 6b0f462f: Re-order Depends to ease cherry picking into Ubuntu [Mark Grant]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Wed, 01 Nov 2023 14:56:25 +0000
+
 get-iplayer (3.33-1+deb11u1) bullseye; urgency=medium
 
   * 390bc096: Release 3.33 [notnac]
