@@ -1,3 +1,17 @@
+get-iplayer (3.35-1+deb9u1) stretch; urgency=medium
+
+  * Update Debian Copyright for 2024
+  * c58424a0: Release 3.35 [notnac]
+  * 251078b5: fixed typos [notnac]
+  * bf49da39: parse "season" in programme title [notnac]
+  * dff2ca9b: fixed typo in option spec [notnac]
+  * 5eab30b6: change indexing messages [notnac]
+  * eac06ffc: filter unwanted links from series nav [notnac]
+  * f65c7d92: added missing encode of --tag-only-filename value [notnac]
+  * 03613863: Update PULL_REQUEST_TEMPLATE.md [notnac]
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Tue, 16 Jan 2024 15:12:05 +0000
+
 get-iplayer (3.34-1+deb9u1) stretch; urgency=medium
 
   * 0cbb5bb3: Release 3.34 [notnac]
