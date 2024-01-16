@@ -23,7 +23,7 @@
 #
 #
 package main;
-my $version = 3.34;
+my $version = 3.35;
 my $version_text;
 $version_text = sprintf("v%.2f", $version) unless $version_text;
 #
@@ -52,7 +52,7 @@ use IO::Socket;
 use IPC::Open3;
 use LWP::ConnCache;
 use LWP::UserAgent;
-use open IN => ':crlf:utf8', OUT => ':utf8';
+use open IN => ':crlf :utf8', OUT => ':utf8';
 use PerlIO::encoding;
 use POSIX qw(strftime);
 use POSIX qw(:termios_h);
@@ -83,7 +83,7 @@ my $opt_format = {
 	# Recording
 	attempts	=> [ 1, "attempts=n", 'Recording', '--attempts <number>', "Number of attempts to make or resume a failed connection.  --attempts is applied per-stream. Programmes have multiple streams available for each recording quality."],
 	audioonly		=> [ 1, "audioonly|audio-only!", 'Recording', '--audio-only', "Only download audio stream for TV programme. Produces .m4a file. Implies --force."],
-	downloadabortonfail	=> [ 1, "downloadabortonfail|download-abort-onfail|download-abort-onfail!", 'Recording', '--download-abort-onfail', "Exit immediately if any stream fails to download. Use to avoid repeated failed download attempts if connection is dropped or access is blocked."],
+	downloadabortonfail	=> [ 1, "downloadabortonfail|download-abort-on-fail|download-abort-onfail!", 'Recording', '--download-abort-onfail', "Exit immediately if any stream fails to download. Use to avoid repeated failed download attempts if connection is dropped or access is blocked."],
 	excludeformat	=> [ 1, "excludeformat|exclude-format=s", 'Recording', '--exclude-format <format>,<format>,...', "Comma-separated list of media stream formats to ignore when recording. Valid values: hls,dash."],
 	excludesupplier	=> [ 1, "excludecdn|exclude-cdn|excludesupplier|exclude-supplier=s", 'Recording', '--exclude-supplier <supplier>,<supplier>,...', "Comma-separated list of media stream suppliers (CDNs) to skip. Possible values: akamai,limelight,bidi,cloudfront. Synonym: --exclude-cdn."],
 	force		=> [ 1, "force|force-download!", 'Recording', '--force', "Ignore programme history (unsets --hide option also)."],
@@ -818,12 +818,12 @@ sub release_check {
 		} else {
 			main::logger "INFO: You have the latest release ($version_text)\n";
 		}
-		if (! open (relchk, "> $relchk_file") ) {
+		if (! open (RELCHK, "> $relchk_file") ) {
 			main::logger "ERROR: Cannot write to release check file: $relchk_file\n";
 			return 1;
 		}
-		print relchk "$relchk_msg\n";
-		close relchk;
+		print RELCHK "$relchk_msg\n";
+		close RELCHK;
 	}
 }
 
@@ -2577,7 +2577,7 @@ sub usage {
 		'This applies even if the base option name already begins with "no-", e.g., --no-no-tag or --no-no-artwork',
 	);
 	push @man,
-		'.TH GET_IPLAYER "1" "October 2023" "Phil Lewis" "get_iplayer Manual"',
+		'.TH GET_IPLAYER "1" "January 2024" "Phil Lewis" "get_iplayer Manual"',
 		'.SH NAME', 'get_iplayer - Stream Recording tool and PVR for BBC iPlayer and BBC Sounds',
 		'.SH SYNOPSIS',
 		'\fBget_iplayer\fR [<options>] [<regex|index> ...]',
@@ -3987,7 +3987,7 @@ sub tag_file {
 	my $prog = shift;
 	if ( $opt->{tagonly} ) {
 		if ( $opt->{tagonlyfilename} ) {
-			$prog->{filename} = $opt->{tagonlyfilename};
+			$prog->{filename} = main::encode_fs($opt->{tagonlyfilename});
 			(undef, undef, $prog->{ext}) = fileparse($prog->{filename}, qr/\.[^.]*/);
 			$prog->{ext} =~ s/^\.//;
 		}
@@ -5208,11 +5208,11 @@ sub parse_title {
 	my $prog = shift;
 	return unless $prog->{title};
 	my ( $name, $episode );
-	$prog->{title} =~ s/,\s+(Series.+?),/: $1:/;
-	$prog->{title} =~ s/,\s+(Episode.+?)/: $1/;
-	$prog->{title} =~ s/^(.+?),\s+(.+)$/$1: $2/ unless $prog->{title} =~ /: Series/;
-	$prog->{title} =~ s/^(.+?),\s+(.+)$/$1: $2/ unless $prog->{title} =~ /: Episode/;
-	if ( $prog->{title} =~ m{^(.+?Series.*?):\s+(.+?)$} ) {
+	$prog->{title} =~ s/,\s+((Series|Cyfres|Season).+?),/: $1:/;
+	$prog->{title} =~ s/,\s+((Episode|Pennod).+?)/: $1/;
+	$prog->{title} =~ s/^(.+?),\s+(.+)$/$1: $2/ unless $prog->{title} =~ /: (Series|Cyfres|Season)/;
+	$prog->{title} =~ s/^(.+?),\s+(.+)$/$1: $2/ unless $prog->{title} =~ /: (Episode|Pennod)/;
+	if ( $prog->{title} =~ m{^(.+?(Series|Cyfres|Season).*?):\s+(.+?)$} ) {
 		( $name, $episode ) = ( $1, $2 );
 	} elsif ( $prog->{title} =~ m{^(.+):\s+(.+)$} ) {
 		( $name, $episode ) = ( $1, $2 );
@@ -5221,12 +5221,12 @@ sub parse_title {
 	}
 	my ($seriesnum, $episodenum);
 	# Extract the seriesnum
-	my $regex = 'Series\s+'.main::regex_numbers();
+	my $regex = '(Series|Cyfres|Season)\s+'.main::regex_numbers();
 	if ( "$name $episode" =~ m{$regex}i ) {
 		$seriesnum = main::convert_words_to_number( $1 );
 	}
 	# Extract the episode num
-	my $regex_1 = 'Episode\s+'.main::regex_numbers();
+	my $regex_1 = '(Episode|Pennod)\s+'.main::regex_numbers();
 	my $regex_2 = '^'.main::regex_numbers().'\.\s+';
 	if ( "$name $episode" =~ m{$regex_1}i ) {
 		$episodenum = main::convert_words_to_number( $1 );
@@ -5354,7 +5354,7 @@ sub get_metadata {
 				# the Doctor Who fudge
 				my ($seriesnum2, $episodenum2);
 				# Extract the seriesnum
-				my $regex = '(?:Series|Cyfres)\s+'.main::regex_numbers();
+				my $regex = '(?:Series|Cyfres|Season)\s+'.main::regex_numbers();
 				if ( "$name $episode" =~ m{$regex}i ) {
 					$seriesnum2 = main::convert_words_to_number( $1 );
 				}
@@ -5433,10 +5433,10 @@ sub get_metadata {
 	$prog->{episodeshort} =~ s/(^|:(\s+))\d+[a-z]?\.\s+/$1/i;
 	my $no_number = $prog->{episodeshort};
 	$prog->{episodeshort} =~ s/:?\s*(Episode|Pennod)\s+.+?(:\s*|$)//i;
-	$prog->{episodeshort} =~ s/:?\s*(Series|Cyfres)\s+.+?(:\s*|$)//i;
+	$prog->{episodeshort} =~ s/:?\s*(Series|Cyfres|Season)\s+.+?(:\s*|$)//i;
 	$prog->{episodeshort} = $no_number if $prog->{episodeshort} eq '';
 	$prog->{nameshort} = $prog->{brand};
-	$prog->{nameshort} =~ s/:?\s*(Series|Cyfres)\s+\d.*?(:\s*|$)//i;
+	$prog->{nameshort} =~ s/:?\s*(Series|Cyfres|Season)\s+\d.*?(:\s*|$)//i;
 	$prog->{firstbcast} = $firstbcast;
 	$prog->{firstbcastrel} = Programme::get_time_string( $firstbcast, time() );
 	($prog->{firstbcastdate} = $firstbcast) =~ s/T.*$//;
@@ -5590,7 +5590,7 @@ sub fetch_pid_info {
 			$prog_episode = $doc->{display_title}->{subtitle};
 			$prog_channel = $doc->{ownership}->{service}->{title};
 			$prog_desc = $doc->{short_synopsis};
-			if ( $prog_episode =~ s/((?:Series|Cyfres) \d+)[, :]+// ) {
+			if ( $prog_episode =~ s/((?:Series|Cyfres|Season) \d+)[, :]+// ) {
 				$prog_name .= ": $1";
 			}
 			for my $ancestor ($parent, $grandparent, $greatgrandparent) {
@@ -5653,7 +5653,7 @@ sub fetch_episodes_recursive {
 				my $prog_name = $name2 ? "$title: $name2" : $title;
 				my $prog_desc = $episode->findvalue('.//*[contains(@class,"programme__synopsis")]/*');
 				unless ( $name2 ) {
-					if ( $prog_episode =~ s/((?:Series|Cyfres) \d+(\s+Reversions)?)[, :]+// ) {
+					if ( $prog_episode =~ s/((?:Series|Cyfres|Season) \d+(\s+Reversions)?)[, :]+// ) {
 						$prog_name .= ": $1";
 					}
 				}
@@ -5685,7 +5685,12 @@ sub fetch_episodes_recursive {
 				my $dom = XML::LibXML->load_html(string => $html, recover => 1, suppress_errors => 1);
 				if ( ! $check_series_nav ) {
 					my @hrefs = $dom->findnodes('//*[contains(@class,"series-nav")]//a/@href');
-					push @urls, "https://www.bbc.co.uk".$_->findvalue('.') for @hrefs;
+					for my $href (@hrefs) {
+						my $href_path = $href->findvalue('.');
+						my ($sid) = $href_path =~ /seriesId=([^\&]+)/i;
+						next if $sid && $sid !~ REGEX_PID;
+						push @urls, "https://www.bbc.co.uk".$href_path;
+					}
 					$has_series_nav = @hrefs;
 					$check_series_nav = 1;
 				}
@@ -5715,7 +5720,7 @@ sub fetch_episodes_recursive {
 						my $prog_name = $name2 ? "$title: $name2" : $title;
 						my $prog_desc = $episode->findvalue('.//*[contains(@class,"content-item-root__meta-label")][1]');
 						unless ( $name2 ) {
-							if ( $prog_episode =~ s/((?:Series|Cyfres) \d+(\s+Reversions)?)[, :]+// ) {
+							if ( $prog_episode =~ s/((?:Series|Cyfres|Season) \d+(\s+Reversions)?)[, :]+// ) {
 								$prog_name .= ": $1";
 							}
 						}
@@ -7096,7 +7101,7 @@ sub get_links_schedule {
 			main::logger "WARNING: Please download and run latest installer or install the Mojolicious Perl module for concurrent indexing of $prog_type programmes.\n";
 			main::logger "ERROR: Failed to load Mojo::UserAgent:\n$@" if $opt->{verbose};
 		} else {
-			main::logger "\nINFO: Indexing $prog_type programmes (concurrent)".($future ? " [future]\n" : "\n");
+			main::logger "\nINFO: Indexing $prog_type programme schedules".($future ? " [future]\n" : "\n");
 			my @mojo_urls;
 			my %mojo_channel_ids;
 			my %mojo_channels;
@@ -7118,7 +7123,7 @@ sub get_links_schedule {
 	}
 	my $ua = main::create_ua( 'desktop', 1 );
 	$ua->timeout(60);
-	main::logger "\nINFO: Indexing $prog_type programmes (sequential)".($future ? " [future]\n" : "\n");
+	main::logger "\nINFO: Indexing $prog_type programme schedules (fallback)".($future ? " [future]\n" : "\n");
 	for my $channel_id ( @channel_list ) {
 		for my $schedule_date ( @schedule_dates ) {
 			my ($url, $rc);
@@ -7307,7 +7312,7 @@ sub get_links_schedule_lwp {
 	my $limit = shift;
 	my $now = shift || time();
 	my $rc_lwp;
-	main::logger "\INFO: Downloading $channel schedule page: $url\n" if $opt->{verbose};
+	main::logger "\nINFO: Downloading $channel schedule page: $url\n" if $opt->{verbose};
 	my $html = main::request_url_retry($ua, $url, 3, '.', "Failed to download $channel schedule page");
 	return 1 unless $html;
 	my $rc = $self->get_links_schedule_json($html, $prog, $prog_type, $channel_id, $channel, $future, $limit, $now, $url);
@@ -7408,7 +7413,7 @@ sub get_links_schedule_html {
 			}
 		}
 		# Extract the seriesnum
-		my $regex = '(?:Series|Cyfres)\s+'.main::regex_numbers();
+		my $regex = '(?:Series|Cyfres|Season)\s+'.main::regex_numbers();
 		$seriesnum = main::convert_words_to_number( $1 ) if "$name $episode" =~ m{$regex}i;
 		# /programmes page
 		$web = "https://www.bbc.co.uk/programmes/${pid}";
@@ -7534,7 +7539,7 @@ sub get_links_schedule_json {
 		# Extract the seriesnum
 		$seriesnum = $entry->{partOfSeason}->{position};
 		if ( ! $seriesnum ) {
-			my $regex = '(?:Series|Cyfres)\s+'.main::regex_numbers();
+			my $regex = '(?:Series|Cyfres|Season)\s+'.main::regex_numbers();
 			$seriesnum = main::convert_words_to_number( $1 ) if "$name $episode" =~ m{$regex}i;
 		}
 		# /programmes page
