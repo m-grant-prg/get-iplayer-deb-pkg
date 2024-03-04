@@ -4,13 +4,14 @@ Upstream-Contact: https://github.com/get-iplayer/get_iplayer
 Source: https://github.com/get-iplayer/get_iplayer
 
 Files: *
-Copyright: (C) 2009 Phil Lewis <iplayer@linuxcentre.net>
+Copyright: (C) 2008-2010 Phil Lewis <iplayer@linuxcentre.net>
+	   (C) 2010- get_iplayer contributors
 License: GPL-3+
 
 Files: debian/*
 Copyright: (C) 2009, 2011 Jonathan Wiltshire <jmw@debian.org>
-           (C) 2017 Jon Davies <jon@hedgerows.org.uk>
-           (C) 2020-2024 Mark Grant <m.grant.prg@gmail.com>
+	   (C) 2017 Jon Davies <jon@hedgerows.org.uk>
+	   (C) 2020-2024 Mark Grant <m.grant.prg@gmail.com>
 License: GPL-3+
 
 License: GPL-3+
