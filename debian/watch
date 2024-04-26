@@ -1,0 +1,33 @@
+# Watch control file for uscan and hence bzr merge-upstream.
+# See uscan(1) for the file format.
+
+
+# Compulsory line, this is a version 4 file.
+version=4
+
+
+# GitHub host.
+# ============
+
+# Prior to October 2022.
+# Gitub releases produce source tarballs with just the release as filename, eg
+# v1.0.1.tar.gz. So, apart from finding the tarball, this watch line also
+# renames the downloaded tarball to package-version.tar.gz.
+
+# The below now no longer works as GitHub have changed their web UI releases
+# page. Changing to use the tags page would work but given the release page
+# breakage, it could happen to the tags page. See the solution below.
+#opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)@ARCHIVE_EXT@%@PACKAGE@-$1.tar.gz%" \
+#https://github.com/get-iplayer/get_iplayer/releases \
+#(?:.*?/)?v?(\d[\d.]*)@ARCHIVE_EXT@ debian
+
+# Current situation. October 2022 onwards.
+# Use mode=git to get a copy of the tag. The tarball has the correct root
+# directory name and the orig is named properly and is a symlink.
+opts="searchmode=plain, \
+	pgpmode=none, \
+	mode=git, \
+	compression=gzip, \
+	dversionmangle=auto" \
+https://github.com/get-iplayer/get_iplayer refs/tags/v@ANY_VERSION@ debian
+
