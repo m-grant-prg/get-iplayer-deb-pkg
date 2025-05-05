@@ -1,3 +1,29 @@
+get-iplayer (3.36-1+deb13u1) trixie; urgency=medium
+
+  [ Mark Grant ]
+  * debian: Update Copyright
+  * Silence lintian changelog-file-missing-explicit-entry warning
+
+  [ John Veness ]
+  * Remove national BBC One
+
+  [ Paul Martin ]
+  * Remove BBC Radio 4 LW from schedules.
+
+  [ notnac ]
+  * don't force episode number when parsing programme title
+  * adjust refreshable command strings
+  * adjust cleaning for pre-2000 dates
+  * allow "rogue" as episode title
+  * use correct default artwork when downloading from search results
+  * adjust series tab parsing
+  * allow ignoring all 4xx errors
+  * change message
+  * add --pid-recursive filtering
+  * Release 3.36
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Mon, 05 May 2025 10:06:07 +0100
+
 get-iplayer (3.35-1+deb13u1) trixie; urgency=medium
 
   * Update Debian Copyright for 2024
