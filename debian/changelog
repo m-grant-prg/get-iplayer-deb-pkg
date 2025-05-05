@@ -1,3 +1,25 @@
+get-iplayer (3.36-1ubuntu24.04u1) noble; urgency=medium
+
+  [ John Veness ]
+  * Remove national BBC One
+
+  [ Paul Martin ]
+  * Remove BBC Radio 4 LW from schedules.
+
+  [ notnac ]
+  * don't force episode number when parsing programme title
+  * adjust refreshable command strings
+  * adjust cleaning for pre-2000 dates
+  * allow "rogue" as episode title
+  * use correct default artwork when downloading from search results
+  * adjust series tab parsing
+  * allow ignoring all 4xx errors
+  * change message
+  * add --pid-recursive filtering
+  * Release 3.36
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Mon, 05 May 2025 10:18:37 +0100
+
 get-iplayer (3.35-1ubuntu24.04u1) noble; urgency=medium
 
   * Add ubuntu noble
