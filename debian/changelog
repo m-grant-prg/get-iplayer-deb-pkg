@@ -1,3 +1,9 @@
+get-iplayer (3.36-1ubuntu24.04u2) noble; urgency=medium
+
+  * Update Debian Copyright for 2025
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Mon, 05 May 2025 10:52:53 +0100
+
 get-iplayer (3.36-1ubuntu24.04u1) noble; urgency=medium
 
   [ John Veness ]
