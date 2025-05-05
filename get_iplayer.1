@@ -1,4 +1,4 @@
-.TH GET_IPLAYER "1" "January 2024" "Phil Lewis" "get_iplayer Manual"
+.TH GET_IPLAYER "1" "May 2025" "Phil Lewis" "get_iplayer Manual"
 .SH NAME
 get_iplayer \- Stream Recording tool and PVR for BBC iPlayer and BBC Sounds
 .SH SYNOPSIS
@@ -224,15 +224,6 @@ Record arbitrary PIDs that do not necessarily appear in the index.
 \fB\-\-pid\-index
 Update (if necessary) and use programme index cache with \-\-pid. Cache is not searched for programme by default with \-\-pid. Synonym: \-\-pid\-refresh.
 .TP
-\fB\-\-pid\-recursive
-Record all related episodes if value of \-\-pid is a series or brand PID.  Requires \-\-pid.
-.TP
-\fB\-\-pid\-recursive\-list
-If value of \-\-pid is a series or brand PID, list available episodes but do not download. Implies \-\-pid\-recursive. Requires \-\-pid.
-.TP
-\fB\-\-pid\-recursive\-type <type>
-Download only programmes of <type> (radio or tv) with \-\-pid\-recursive. Requires \-\-pid\-recursive.
-.TP
 \fB\-\-proxy, \-p <url>
 Web proxy URL, e.g., http://username:password@server:port or http://server:port.  Value of http_proxy environment variable (if present) will be used unless \-\-proxy is specified. Used for both HTTP and HTTPS. Overridden by \-\-no\-proxy.
 .TP
@@ -265,6 +256,28 @@ Record the PIDs contained in the specified iPlayer episode URLs. Alias for \-\-p
 .TP
 \fB\-\-versions <versions>
 Version of programme to record. List is processed from left to right and first version found is downloaded. Example: '\-\-versions=audiodescribed,default' will prefer audiodescribed programmes if available. Versions: 'default,audiodescribed,signed,combined'. Default: 'default'.
+.SS "Recursive Recording Options:"
+.TP
+\fB\-\-pid\-recursive
+Record all related episodes if value of \-\-pid is a series or brand PID.  Requires \-\-pid.
+.TP
+\fB\-\-pid\-recursive\-channel <channel>[,<channel>,...]
+Filter episode list to include only programmes where <channel> (regex or comma\-separated list of substrings) appears in channel name. Requires \-\-pid\-recursive.
+.TP
+\fB\-\-pid\-recursive\-exclude <exclude>[,<exclude>,...]
+Filter episode list to exclude all programmes where <exclude> (regex or comma\-separated list of substrings) appears in series name or episode title. Requires \-\-pid\-recursive.
+.TP
+\fB\-\-pid\-recursive\-exclude\-channel <channel>[,<channel>,...]
+Filter episode list to exclude all programmes where <channel> (regex or comma\-separated list of substrings) appears in channel name. Requires \-\-pid\-recursive.
+.TP
+\fB\-\-pid\-recursive\-list
+If value of \-\-pid is a series or brand PID, list available episodes but do not download. Implies \-\-pid\-recursive. Requires \-\-pid.
+.TP
+\fB\-\-pid\-recursive\-search <search>[,<searchl>,...]
+Filter episode list to include only programmes where <search> (regex or comma\-separated list of substrings) appears in series name or episode title. Requires \-\-pid\-recursive.
+.TP
+\fB\-\-pid\-recursive\-type <type>
+ Filter episode list to include only programmes of type <type> (radio or tv). Requires \-\-pid\-recursive.
 .SS "Output Options:"
 .TP
 \fB\-\-command, \-c <command>
@@ -583,7 +596,7 @@ get_iplayer was written by Phil Lewis <iplayer2 (at sign) linuxcentre.net> and i
 .PP
 This manual page was originally written by Jonathan Wiltshire <jmw@debian.org> for the Debian project (but may be used by others).
 .SH COPYRIGHT NOTICE
-get_iplayer v3.35
+get_iplayer v3.36
   Copyright (C) 2008\-2010 Phil Lewis, 2010\- get_iplayer contributors
   This program comes with ABSOLUTELY NO WARRANTY; for details use \-\-warranty.
   This is free software, and you are welcome to redistribute it under certain
