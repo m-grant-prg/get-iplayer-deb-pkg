@@ -1,0 +1,7 @@
+This is the Debian package for get_iplayer.
+
+Because of naming restrictions, the source package is called get-iplayer, and
+so to avoid confusion the following symbolic links are also created:
+
+/usr/bin/get-iplayer 			-> /usr/bin/get_iplayer
+/usr/share/man/man1/get-iplayer.1.gz 	-> /usr/share/man/man1/get_iplayer.1.gz
