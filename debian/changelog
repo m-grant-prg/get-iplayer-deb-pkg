@@ -1,3 +1,9 @@
+get-iplayer (3.36-1+deb14u1) forky; urgency=medium
+
+  * Transition from Trixie to Forky
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Sun, 24 Aug 2025 14:24:20 +0100
+
 get-iplayer (3.36-1+deb13u2) trixie; urgency=medium
 
   * Update Debian Copyright for 2025
