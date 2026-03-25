@@ -1,3 +1,10 @@
+get-iplayer (3.36-1ubuntu26.04u1) resolute; urgency=medium
+
+  * Add debian directory
+  * Update Debian Copyright for 2026
+
+ -- Mark Grant <m.grant.prg@gmail.com>  Wed, 25 Mar 2026 14:58:14 +0000
+
 get-iplayer (3.36-1ubuntu24.04u2) noble; urgency=medium
 
   * Update Debian Copyright for 2025
